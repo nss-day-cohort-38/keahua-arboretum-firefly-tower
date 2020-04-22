@@ -1,16 +1,16 @@
 from animals import Animal
-from interfaces import IFreshwater, Identifiable, ISwimming
+from interfaces import ISaltwater, Identifiable, ISwimming
 
-class RiverDolphin(Animal, IFreshwater, Identifiable, ISwimming):
+class Ulae(Animal, ISaltwater, Identifiable, ISwimming):
 
     def __init__(self, age, name):
         Animal.__init__(self)
-        IFreshwater.__init__(self)
+        ISaltwater.__init__(self)
         Identifiable.__init__(self)
         ISwimming.__init__(self)
         self.name = name
-        self.__species = "River Dolphin"
-        self.__min_release_age = 13
+        self.__species = "Ulae"
+        self.__min_release_age = 1
         self.age = age
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
@@ -29,12 +29,12 @@ class RiverDolphin(Animal, IFreshwater, Identifiable, ISwimming):
 
     def feed(self, prey):
         if prey in self.__prey:
-            print(f'The dolphin ate {prey} for a meal')
+            print(f'The lizard fish ate {prey} for a meal')
         else:
-            print(f'The dolphin rejects the {prey}')
+            print(f'The lizard fish rejects the {prey}')
 
     def move(self):
         print(f"The {self. species} swims")
 
     def __str__(self):
-        return f'River Dolphin {self.id}'
+        return f'Ulae {self.id}'
