@@ -1,7 +1,7 @@
 from environments import Environment
 class Forest(Environment):
-    def _init_(self):
-      super()._init_(self)
+    def __init__(self):
+      super().__init__(self)
       self.characteristics = "Rainy, Shady"
       self.animal_cap = 20
       self.plant_cap = 32
