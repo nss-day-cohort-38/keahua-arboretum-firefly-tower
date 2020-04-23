@@ -3,8 +3,8 @@ from environments import Environment
 class Swamp(Environment):
     def __init__(self): 
         super().__init__(self)
-        animal_cap = 8
-        plant_cap = 12
+        self.animal_cap = 8
+        self.plant_cap = 12
         
     def add_animal(self, animal):
         right_animal = False

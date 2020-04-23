@@ -3,9 +3,9 @@ from environments import Environment
 class Mountain(Environment): 
     def __init__(self): 
         super().__init__(self)
-        animal_cap = 6
-        plant_cap = 4
-
+        self.animal_cap = 6
+        self.plant_cap = 4
+        
     def add_animal(self, animal):
         right_animal = False
         try:

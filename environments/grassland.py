@@ -3,8 +3,8 @@ from environments import Environment
 class Grassland(Environment): 
     def __init__(self): 
         super().__init__(self)
-        animal_cap = 22
-        plant_cap = 15
+        self.animal_cap = 22
+        self.plant_cap = 15
         
     def add_animal(self, animal):
         right_animal = False
