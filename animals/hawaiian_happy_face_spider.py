@@ -1,11 +1,11 @@
 from animals import Animal
-from interfaces import IFreshWater, IWalking
+from interfaces import IFreshwater, IWalking
 
-class HawaiianHappyFaceSpider(Animal, IFreshWater, IWalking):
+class HawaiianHappyFaceSpider(Animal, IFreshwater, IWalking):
 
     def __init__(self, age, name):
         Animal.__init__(self)
-        IFreshWater.__init__(self)
+        IFreshwater.__init__(self)
         IWalking.__init__(self)
         self.name = name
         self.__species = "Hawaiian Happy Face Spider"
