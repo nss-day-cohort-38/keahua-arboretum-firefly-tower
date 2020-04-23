@@ -10,4 +10,4 @@ class Plant(Identifiable):
       # self.peak_season = season
 
     def __str__(self):
-        return f'{self.species} {self.id}'
+        return f'{self.species}'
