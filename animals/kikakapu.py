@@ -14,19 +14,6 @@ class Kikakapu(Animal, IFreshwater, ISwimming):
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
         self.tolerate_stagnant = True
 
-
-    @property
-    def prey(self):
-        return self.__prey
-
-    @property 
-    def species(self):
-        return self.__species
-
-    @property
-    def min_release_age(self):
-        return self.__min_release_age
-
     def feed(self, prey):
         if prey in self.__prey:
             print(f'The butterfly fish ate {prey} for a meal')

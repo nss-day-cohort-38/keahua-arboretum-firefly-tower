@@ -14,18 +14,6 @@ class Pueo(Animal, ITerrestrial, IFlying):
         self.__prey = { "Mouse", "Rat" }
 
 
-    @property
-    def prey(self):
-        return self.__prey
-
-    @property 
-    def species(self):
-        return self.__species
-
-    @property
-    def min_release_age(self):
-        return self.__min_release_age
-
     def feed(self, prey):
         if prey in self.__prey:
             print(f'The owl ate {prey} for a meal')

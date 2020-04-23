@@ -13,19 +13,6 @@ class Ulae(Animal, ISaltwater, ISwimming):
         self.age = age
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
-
-    @property
-    def prey(self):
-        return self.__prey
-
-    @property 
-    def species(self):
-        return self.__species
-
-    @property
-    def min_release_age(self):
-        return self.__min_release_age
-
     def feed(self, prey):
         if prey in self.__prey:
             print(f'The lizard fish ate {prey} for a meal')

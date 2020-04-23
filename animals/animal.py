@@ -10,6 +10,18 @@ class Animal(Identifiable):
         self.__min_release_age = 0
         self.__prey = {}
 
+    @property
+    def prey(self):
+        return self.__prey
+
+    @property 
+    def species(self):
+        return self.__species
+
+    @property
+    def min_release_age(self):
+        return self.__min_release_age
+
     def move(self):
         print(f"{self. species} moves")
 

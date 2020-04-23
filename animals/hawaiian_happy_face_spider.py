@@ -1,30 +1,19 @@
 from animals import Animal
-from interfaces import ITerrestrial, IWalking
+from interfaces import IFreshWater, IWalking
 
-class HawaiianHappyFaceSpider(Animal, ITerrestrial, IWalking):
+class HawaiianHappyFaceSpider(Animal, IFreshWater, IWalking):
 
     def __init__(self, age, name):
         Animal.__init__(self)
-        ITerrestrial.__init__(self)
+        IFreshWater.__init__(self)
         IWalking.__init__(self)
         self.name = name
         self.__species = "Hawaiian Happy Face Spider"
         self.__min_release_age = .5
         self.age = age
         self.__prey = { "Flies", "Ants" }
-
-
-    @property
-    def prey(self):
-        return self.__prey
-
-    @property 
-    def species(self):
-        return self.__species
-
-    @property
-    def min_release_age(self):
-        return self.__min_release_age
+        self.tolerate_stagnant = True
+        self.tolerate_current = False
 
     def feed(self, prey):
         if prey in self.__prey:
