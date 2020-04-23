@@ -8,19 +8,19 @@ class Ulae(Animal, ISaltwater, ISwimming):
         ISaltwater.__init__(self)
         ISwimming.__init__(self)
         self.name = name
-        self.__species = "Ulae"
-        self.__min_release_age = 1
+        self.species = "Ulae"
+        self.min_release_age = 1
         self.age = age
-        self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The lizard fish ate {prey} for a meal')
         else:
             print(f'The lizard fish rejects the {prey}')
 
     def move(self):
-        print(f"The {self. species} swims")
+        print(f"The {self.species} swims")
 
     def __str__(self):
         return f'Ulae {self.id}'

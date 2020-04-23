@@ -9,23 +9,23 @@ class NeneGoose(Animal, ITerrestrial, ISwimming, IWalking):
         ISwimming.__init__(self)
         IWalking.__init__(self)
         self.name = name
-        self.__species = "Nene Goose"
-        self.__min_release_age = 7
+        self.species = "Nene Goose"
+        self.min_release_age = 7
         self.age = age
-        self.__prey = { "grass", "plant", "leaves" }
+        self.prey = { "grass", "plant", "leaves" }
         self.tolerate_sun = True
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The goose ate {prey} for a meal')
         else:
             print(f'The goose rejects the {prey}')
 
     def walk(self):
-        print(f"{self. species} walks")
+        print(f"{self.species} walks")
 
     def swim(self):
-        print("The {self. species} swims")
+        print(f"The {self.species} swims")
 
     def __str__(self):
         return f'Nene Goose {self.id}'
