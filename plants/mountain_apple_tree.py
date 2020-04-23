@@ -4,7 +4,7 @@ from plants import Plant
 class MountainAppleTree(ITerrestrial, Plant):
 
     def __init__(self):
-      self.species = "Mountain Apple Tree"
+      self.__species = "Mountain Apple Tree"
       
       ITerrestrial.__init__(self)
       Plant.__init__(self, self.species)
@@ -12,8 +12,9 @@ class MountainAppleTree(ITerrestrial, Plant):
       self.tolerate_shade = True
       self.tolerate_sun = False
       self.high_elevation = True
-      self.seeds_produced = 17
-      self.insecticide_resistance = "High"
+      self.__seeds_produced = 17
+      self.__insecticide_resistance = "High"
       
       # Was in the original code but doesn't appear to be used
       # self.peak_season = season
+      
