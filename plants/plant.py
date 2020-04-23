@@ -1,4 +1,6 @@
-class Plant:
+from interfaces import Identifiable
+
+class Plant(Identifiable):
 
     def __init__(self, species):
       self.__species = species
