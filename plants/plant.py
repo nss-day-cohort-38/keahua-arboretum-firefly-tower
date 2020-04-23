@@ -1,5 +1,10 @@
-class Plant:
+from interfaces import Identifiable
 
-    def __init__(self, species, season):
-      self.species = species
-      self.peak_season = season
+class Plant(Identifiable):
+
+    def __init__(self):
+      super().__init__()
+      self.species = ""
+      
+      # Was in the original code but doesn't appear to be used
+      # self.peak_season = season
