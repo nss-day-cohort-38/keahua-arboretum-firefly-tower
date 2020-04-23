@@ -8,20 +8,20 @@ class GoldDustDayGecko(Animal, ITerrestrial, IWalking):
         ITerrestrial.__init__(self)
         IWalking.__init__(self)
         self.name = name
-        self.__species = "Gold Dust Day Gecko"
-        self.__min_release_age = 2
+        self.species = "Gold Dust Day Gecko"
+        self.min_release_age = 2
         self.age = age
-        self.__prey = { "Fly", "Ants" }
+        self.prey = { "Fly", "Ants" }
         self.tolerate_shade = True
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The gecko ate {prey} for a meal')
         else:
             print(f'The gecko rejects the {prey}')
 
     def move(self):
-        print(f"The {self. species} walks")
+        print(f"The {self.species} walks")
 
     def __str__(self):
         return f'Gecko {self.id}'
