@@ -8,7 +8,7 @@ class River(Environment):
     def add_animal(self, animal):
         right_animal = False
         try:
-            if animal.aquatic and animal.tolerate_fresh and animal.freshwater:
+            if animal.aquatic and animal.tolerate_current and animal.freshwater:
                 right_animal = True
         except AttributeError:
             raise AttributeError("Cannot add non-aquatic, or saltwater, or stagnant water animals to a river")

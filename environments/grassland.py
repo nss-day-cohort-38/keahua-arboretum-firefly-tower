@@ -1,10 +1,8 @@
 from environments import Environment
-from interfaces import ITerrestrial
 
-class Grassland(Environment, ITerrestrial): 
+class Grassland(Environment): 
     def __init__(self): 
-        Environment.__init__(self)
-        ITerrestrial.__init__(self)
+        super().__init__(self)
         animal_cap = 22
         plant_cap = 15
         

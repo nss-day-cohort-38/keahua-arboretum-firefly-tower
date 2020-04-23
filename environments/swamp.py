@@ -1,10 +1,8 @@
 from environments import Environment
-from interfaces import IFreshwater
 
-class Swamp(Environment, IFreshwater):
+class Swamp(Environment):
     def __init__(self): 
-        Environment.__init__(self)
-        IFreshwater.__init__(self)
+        super().__init__(self)
         animal_cap = 8
         plant_cap = 12
         
