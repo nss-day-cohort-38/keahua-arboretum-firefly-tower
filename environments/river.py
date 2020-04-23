@@ -1,7 +1,7 @@
 from environments import Environment
 class River(Environment):
     def __init__(self):
-      super().__init__(self)
+      super().__init__()
       self.characteristics = "Fresh Water"
       self.animal_cap = 12
       self.plant_cap = 6
@@ -10,17 +10,26 @@ class River(Environment):
         try:
             if animal.aquatic and animal.tolerate_current and animal.freshwater:
                 right_animal = True
+            else: 
+                print(f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
         except AttributeError:
-            raise AttributeError("Cannot add non-aquatic, or saltwater, or stagnant water animals to a river")
+            print(f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
         if right_animal:
-            try:
-                if self.get_animal_count < self.animal_cap:
-                    self.animals.append(animal)
-            except AttributeError:
-                raise AttributeError("There are too many animals to add another one")
+            if animal.min_release_age <= animal.age:
+                right_animal = True
+            else:
+                print(f"{animal} is not old enough to be released")
+                right_animal = False
+        if right_animal:
+            if self.get_animal_count() < self.animal_cap:
+                self.animals.append(animal)
+            else:
+                print("There are too many animals to add another one")
     def add_plant(self, plant):
         try:
             if plant.freshwater and plant.tolerate_stagnant == False:
                 self.plants.append(plant)
+            else:
+                print(f"Cannot add {plant} that require stagnant water to a river biome")
         except AttributeError:
-            raise AttributeError("Cannot add plants that require stagnant water to a river biome")
+            print(f"Cannot add {plant} that require stagnant water to a river biome")
