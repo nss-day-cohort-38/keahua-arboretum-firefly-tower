@@ -1,4 +1,5 @@
 from environments import Environment
+
 class Coastline(Environment):
     def __init__(self):
       super().__init__(self)

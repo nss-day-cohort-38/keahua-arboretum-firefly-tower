@@ -1,15 +1,17 @@
 from environments import Environment
+from interfaces import IFreshwater
 
-class Swamp(Environment):
+class Swamp(Environment, IFreshwater):
     def __init__(self): 
-        super().__init__(self)
+        Environment.__init__(self)
+        IFreshwater.__init__(self)
         animal_cap = 8
         plant_cap = 12
         
     def add_animal(self, animal):
         right_animal = False
         try:
-            if animal.tolerate_stagnant == True and animal.freshwater == True:
+            if animal.tolerate_stagnant == True:
                 right_animal = True 
         except AttributeError:
             raise AttributeError("Cannot add animals that cannot live in stagnant fresh waters to a swamp.")
@@ -22,7 +24,7 @@ class Swamp(Environment):
     def add_plant(self, plant):
         right_plant = False
         try:
-            if plant.tolerate_stagnant == True and plant.freshwater == True:
+            if plant.tolerate_stagnant == True:
                 right_plant = True 
         except AttributeError:
             raise AttributeError("Cannot add plants that cannot live in stagnant fresh waters to a swamp.")
