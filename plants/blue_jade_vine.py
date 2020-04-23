@@ -8,7 +8,7 @@ class BlueJadeVine(ITerrestrial, IFreshwater, Plant):
       
       ITerrestrial.__init__(self)
       IFreshwater.__init__(self)
-      Plant.__init__(self, self.__species)
+      Plant.__init__(self)
       
       self.tolerate_shade = True
       

@@ -7,7 +7,7 @@ class MountainAppleTree(ITerrestrial, Plant):
       self.__species = "Mountain Apple Tree"
       
       ITerrestrial.__init__(self)
-      Plant.__init__(self, self.__species)
+      Plant.__init__(self)
       
       self.tolerate_shade = True
       self.tolerate_sun = False
