@@ -31,6 +31,6 @@ class Coastline(Environment):
             if plant.saltwater:
                 self.plants.append(plant)
             else:
-                print("Too salty to plant stuff here")
+                print("Too salty to plant {plant} here")
         except AttributeError:
-            print("Too salty to plant stuff here")
+            print("Too salty to plant {plant} here")
