@@ -26,4 +26,9 @@ class Animal(Identifiable):
         print(f"{self.__species} moves")
 
     def feed(self, prey):
-        return f"{self.__species} was fed a {prey}"
+        return f"The {self.__species} ate a {prey} for a meal"
+
+    def __str__(self):
+        return f'{self.__species} {self.id}'
+
+    
