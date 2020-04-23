@@ -23,7 +23,7 @@ class Animal(Identifiable):
         return self.__min_release_age
 
     def move(self):
-        print(f"{self. species} moves")
+        print(f"{self.__species} moves")
 
     def feed(self, prey):
-        return f"{self.species} was fed a {prey}"
+        return f"{self.__species} was fed a {prey}"

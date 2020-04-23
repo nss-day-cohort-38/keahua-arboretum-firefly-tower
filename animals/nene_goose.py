@@ -13,7 +13,7 @@ class NeneGoose(Animal, ITerrestrial, ISwimming, IWalking):
         self.__min_release_age = 7
         self.age = age
         self.__prey = { "grass", "plant", "leaves" }
-
+        self.tolerate_sun = True
 
     def feed(self, prey):
         if prey in self.__prey:

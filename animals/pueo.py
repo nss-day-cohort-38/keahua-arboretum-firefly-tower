@@ -12,7 +12,8 @@ class Pueo(Animal, ITerrestrial, IFlying):
         self.__min_release_age = 8
         self.age = age
         self.__prey = { "Mouse", "Rat" }
-
+        self.tolerate_shade = True
+        self.tolerate_sun = True
 
     def feed(self, prey):
         if prey in self.__prey:

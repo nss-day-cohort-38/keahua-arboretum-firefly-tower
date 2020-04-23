@@ -12,6 +12,7 @@ class GoldDustDayGecko(Animal, ITerrestrial, IWalking):
         self.__min_release_age = 2
         self.age = age
         self.__prey = { "Fly", "Ants" }
+        self.tolerate_shade = True
 
     def feed(self, prey):
         if prey in self.__prey:

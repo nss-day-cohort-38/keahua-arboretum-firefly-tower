@@ -12,6 +12,8 @@ class Opeapea(Animal, ITerrestrial, IFlying):
         self.__min_release_age = 5
         self.age = age
         self.__prey = { "Ants", "Fly", "Grass", "Plants"}
+        self.high_elevation = True
+        self.tolerate_shade = True
 
     def feed(self, prey):
         if prey in self.__prey:
