@@ -10,7 +10,7 @@ class Mountain(Environment):
         right_animal = False
         try:
             if animal.high_elevation == True:
-                self.right_animal = True 
+                right_animal = True 
         except AttributeError:
             raise AttributeError("Cannot add animals without ability to withstand high elevations to a mountain.")
         if right_animal: 
@@ -23,7 +23,7 @@ class Mountain(Environment):
         right_plant = False
         try:
             if plant.high_elevation == True:
-                self.right_plant = True 
+                right_plant = True 
         except AttributeError:
             raise AttributeError("Cannot add plants without ability to withstand high elevations to a mountain.")
         if right_plant: 
