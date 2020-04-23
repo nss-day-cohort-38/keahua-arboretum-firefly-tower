@@ -28,7 +28,7 @@ class Mountain(Environment):
             raise AttributeError("Cannot add plants without ability to withstand high elevations to a mountain.")
         if right_plant: 
             try:
-                if self.get_animal_count < self.animal_cap:
+                if self.get_plant_count < self.plant_cap:
                     self.plants.append(plant) 
             except AttributeError: 
                 raise AttributeError("Cannot add more than four plants.")
