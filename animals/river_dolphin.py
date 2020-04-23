@@ -9,19 +9,19 @@ class RiverDolphin(Animal, IFreshwater, ISwimming, ISaltwater):
         ISwimming.__init__(self)
         ISaltwater.__init__(self)
         self.name = name
-        self.__species = "River Dolphin"
-        self.__min_release_age = 13
+        self.species = "River Dolphin"
+        self.min_release_age = 13
         self.age = age
-        self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The dolphin ate {prey} for a meal')
         else:
             print(f'The dolphin rejects the {prey}')
 
     def move(self):
-        print(f"The {self. species} swims")
+        print(f"The {self.species} swims")
 
     def __str__(self):
         return f'River Dolphin {self.id}'
