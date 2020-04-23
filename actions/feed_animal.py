@@ -3,6 +3,8 @@ from animals import GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoo
 def feed_animal(arboretum):
     animal = None
 
+    gecko = GoldDustDayGecko(5, "Simon")
+
     print("1. Gold Dust Day Gecko")
     print("2. Hawaiian Happy Face Spider")
     print("3. Kikakapu")
@@ -14,8 +16,10 @@ def feed_animal(arboretum):
 
     choice = input("Choose animal to feed > ")
 
+    animal = gecko
+
     if choice == "1":
-        for index, prey in enumerate(GoldDustDayGecko.prey):
+        for index, prey in enumerate(gecko.prey):
             print(f'{index + 1}. {prey}')
 
     if choice == "2":
@@ -38,3 +42,6 @@ def feed_animal(arboretum):
 
     if choice == "8":
         pass
+
+    print("Choose what to feed it")
+    choice = input("> ")
