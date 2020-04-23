@@ -7,7 +7,7 @@ class RainbowEucalyptusTree(ITerrestrial, Plant):
       self.__species = "Rainbow Eucalyptus Tree"
       
       ITerrestrial.__init__(self)
-      Plant.__init__(self, self.species)
+      Plant.__init__(self, self.__species)
       
       self.tolerate_shade = True
       self.tolerate_sun = False

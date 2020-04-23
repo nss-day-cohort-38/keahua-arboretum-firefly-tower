@@ -7,7 +7,7 @@ class Silversword(ITerrestrial, Plant):
       self.__species = "Silversword"
       
       ITerrestrial.__init__(self)
-      Plant.__init__(self, self.species)
+      Plant.__init__(self, self.__species)
       
       self.tolerate_shade = False
       self.tolerate_sun = True

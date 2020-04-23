@@ -4,11 +4,11 @@ from plants import Plant
 class BlueJadeVine(ITerrestrial, IFreshwater, Plant):
 
     def __init__(self):
-      self.species = "Blue Jade Vine"
+      self.__species = "Blue Jade Vine"
       
       ITerrestrial.__init__(self)
       IFreshwater.__init__(self)
-      Plant.__init__(self, self.species)
+      Plant.__init__(self, self.__species)
       
       self.tolerate_shade = True
       
