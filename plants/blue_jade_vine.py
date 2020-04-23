@@ -4,12 +4,11 @@ from plants import Plant
 class BlueJadeVine(ITerrestrial, IFreshwater, Plant):
 
     def __init__(self):
-      self.__species = "Blue Jade Vine"
-      
       ITerrestrial.__init__(self)
       IFreshwater.__init__(self)
       Plant.__init__(self)
       
+      self.species = "Blue Jade Vine"
       self.tolerate_shade = True
       
       #Technically, the "Sunlight" entry on the readme says "Partial", 
@@ -21,13 +20,9 @@ class BlueJadeVine(ITerrestrial, IFreshwater, Plant):
       # is not true for this plant if it lives in a swamp
       self.tolerate_stagnant = True
       
-      self.__seeds_produced = 0
-      self.__insecticide_resistance = "Medium"
-      self.__rainfall = "Little"
+      self.seeds_produced = 0
+      self.insecticide_resistance = "Medium"
+      self.rainfall = "Little"
       
       # Was in the original code but doesn't appear to be used
       # self.peak_season = season
-        
-      @property
-      def is_stagnant(self):
-          return self.__is_stagnant
