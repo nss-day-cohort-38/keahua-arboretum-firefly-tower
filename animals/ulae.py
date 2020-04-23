@@ -1,12 +1,11 @@
 from animals import Animal
-from interfaces import ISaltwater, Identifiable, ISwimming
+from interfaces import ISaltwater, ISwimming
 
-class Ulae(Animal, ISaltwater, Identifiable, ISwimming):
+class Ulae(Animal, ISaltwater, ISwimming):
 
     def __init__(self, age, name):
         Animal.__init__(self)
         ISaltwater.__init__(self)
-        Identifiable.__init__(self)
         ISwimming.__init__(self)
         self.name = name
         self.__species = "Ulae"

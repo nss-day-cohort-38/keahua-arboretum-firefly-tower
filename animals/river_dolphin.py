@@ -1,13 +1,13 @@
 from animals import Animal
-from interfaces import IFreshwater, Identifiable, ISwimming
+from interfaces import IFreshwater, ISwimming, ISaltwater
 
-class RiverDolphin(Animal, IFreshwater, Identifiable, ISwimming):
+class RiverDolphin(Animal, IFreshwater, ISwimming, ISaltwater):
 
     def __init__(self, age, name):
         Animal.__init__(self)
         IFreshwater.__init__(self)
-        Identifiable.__init__(self)
         ISwimming.__init__(self)
+        ISaltwater.__init__(self)
         self.name = name
         self.__species = "River Dolphin"
         self.__min_release_age = 13

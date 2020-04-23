@@ -1,12 +1,11 @@
 from animals import Animal
-from interfaces import ITerrestrial, Identifiable, ISwimming, IWalking
+from interfaces import ITerrestrial, ISwimming, IWalking
 
-class NeneGoose(Animal, ITerrestrial, Identifiable, ISwimming, IWalking):
+class NeneGoose(Animal, ITerrestrial, ISwimming, IWalking):
 
     def __init__(self, age, name):
         Animal.__init__(self)
         ITerrestrial.__init__(self)
-        Identifiable.__init__(self)
         ISwimming.__init__(self)
         IWalking.__init__(self)
         self.name = name

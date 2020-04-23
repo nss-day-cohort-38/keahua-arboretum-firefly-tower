@@ -1,6 +1,9 @@
-class Animal:
+from interfaces import Identifiable
+
+class Animal(Identifiable):
 
     def __init__(self):
+        super().__init__()
         self.name = ""
         self.__species = ""
         self.age = 0

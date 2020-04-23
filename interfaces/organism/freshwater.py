@@ -4,5 +4,5 @@ class IFreshwater(IAquatic):
 
     def __init__(self):
         super().__init__()
-        self.cell_type = "hypertonic"
-        self.is_stagnant = False
+        self.tolerate_stagnant = False
+        self.tolerate_fresh = True

@@ -1,18 +1,18 @@
 from animals import Animal
-from interfaces import IFreshwater, Identifiable, ISwimming
+from interfaces import IFreshwater, ISwimming
 
-class Kikakapu(Animal, IFreshwater, Identifiable, ISwimming):
+class Kikakapu(Animal, IFreshwater, ISwimming):
 
     def __init__(self, age, name):
         Animal.__init__(self)
         IFreshwater.__init__(self)
-        Identifiable.__init__(self)
         ISwimming.__init__(self)
         self.name = name
         self.__species = "Kikakapu"
         self.__min_release_age = 1
         self.age = age
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.tolerate_stagnant = True
 
 
     @property
