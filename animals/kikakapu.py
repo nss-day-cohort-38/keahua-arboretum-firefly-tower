@@ -8,20 +8,20 @@ class Kikakapu(Animal, IFreshwater, ISwimming):
         IFreshwater.__init__(self)
         ISwimming.__init__(self)
         self.name = name
-        self.__species = "Kikakapu"
-        self.__min_release_age = 1
+        self.species = "Kikakapu"
+        self.min_release_age = 1
         self.age = age
-        self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
         self.tolerate_stagnant = True
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The butterfly fish ate {prey} for a meal')
         else:
             print(f'The butterfly fish rejects the {prey}')
 
     def move(self):
-        print(f"The {self. species} swims")
+        print(f"The {self.species} swims")
 
     def __str__(self):
         return f'Kikakapu {self.id}'

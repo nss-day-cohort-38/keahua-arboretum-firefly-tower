@@ -8,21 +8,21 @@ class HawaiianHappyFaceSpider(Animal, IFreshwater, IWalking):
         IFreshwater.__init__(self)
         IWalking.__init__(self)
         self.name = name
-        self.__species = "Hawaiian Happy Face Spider"
-        self.__min_release_age = .5
+        self.species = "Hawaiian Happy Face Spider"
+        self.min_release_age = .5
         self.age = age
-        self.__prey = { "Flies", "Ants" }
+        self.prey = { "Flies", "Ants" }
         self.tolerate_stagnant = True
         self.tolerate_current = False
 
     def feed(self, prey):
-        if prey in self.__prey:
+        if prey in self.prey:
             print(f'The spider ate {prey} for a meal')
         else:
             print(f'The spider rejects the {prey}')
 
     def move(self):
-        print(f"The {self. species} walks")
+        print(f"The {self.species} walks")
 
     def __str__(self):
         return f'Hawaiian Happy Face Spider {self.id}'
