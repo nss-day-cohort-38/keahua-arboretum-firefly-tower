@@ -9,10 +9,10 @@ class Grassland(Environment):
     def add_animal(self, animal):
         right_animal = False
         try:
-            if animal.high_elevation == False and animal.tolerate_shade == False:
+            if animal.high_elevation == False and animal.tolerate_sun == True:
                 right_animal = True 
         except AttributeError:
-            raise AttributeError("Cannot add animals that tolerate shade or high elevation to a grassland.")
+            raise AttributeError("Cannot add animals that do not tolerate sun or high elevation to a grassland.")
         if right_animal: 
             try:
                 if self.get_animal_count < self.animal_cap:
@@ -22,10 +22,10 @@ class Grassland(Environment):
     def add_plant(self, plant):
         right_plant = False
         try:
-            if plant.high_elevation  == False and plant.tolerate_shade == False:
+            if plant.high_elevation  == False and plant.tolerate_sun == True:
                 right_plant = True 
         except AttributeError:
-            raise AttributeError("Cannot add plants that tolerate shade or high elevation to a grassland.")
+            raise AttributeError("Cannot add plants that do not tolerate sun or high elevation to a grassland.")
         if right_plant: 
             try:
                 if self.get_plant_count < self.plant_cap:
