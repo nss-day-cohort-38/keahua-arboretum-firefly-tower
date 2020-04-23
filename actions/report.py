@@ -66,4 +66,4 @@ def build_facility_report(arboretum):
         print("\n")
 
 
-    input("\n\nPress any key to continue...")
+    input("\n\nPress enter key to continue...")
