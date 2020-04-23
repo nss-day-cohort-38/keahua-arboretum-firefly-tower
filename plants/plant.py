@@ -8,3 +8,6 @@ class Plant(Identifiable):
       
       # Was in the original code but doesn't appear to be used
       # self.peak_season = season
+
+    def __str__(self):
+        return f'{self.species} {self.id}'

@@ -2,7 +2,7 @@ from environments import Environment
 
 class Coastline(Environment):
     def __init__(self):
-      super().__init__(self)
+      super().__init__()
       self.characteristics = "Saltwater"
       self.animal_cap = 15
       self.plant_cap = 3
@@ -11,17 +11,26 @@ class Coastline(Environment):
         try:
             if animal.aquatic and animal.saltwater:
                 right_animal = True
+            else:
+                print(f"Cannot add {animal}: non-aquatic, or freshwater animals to a coastline")
         except AttributeError:
-            raise AttributeError("Cannot add non-aquatic, or freshwater animals to a coastline")
+            print(f"Cannot add {animal}: non-aquatic, or freshwater animals to a coastline")
         if right_animal:
-            try:
-                if self.get_animal_count < self.animal_cap:
-                    self.animals.append(animal)
-            except AttributeError:
-                raise AttributeError("There are too many animals to add another one")
+            if animal.min_release_age <= animal.age:
+                right_animal = True
+            else:
+                print(f"{animal} is not old enough to be released")
+                right_animal = False
+        if right_animal:
+            if self.get_animal_count() < self.animal_cap:
+                self.animals.append(animal)
+            else:
+                print("There are too many animals to add another one")
     def add_plant(self, plant):
         try:
             if plant.saltwater:
                 self.plants.append(plant)
+            else:
+                print("Too salty to plant stuff here")
         except AttributeError:
-            raise AttributeError("Too salty to plant stuff here")
+            print("Too salty to plant stuff here")
