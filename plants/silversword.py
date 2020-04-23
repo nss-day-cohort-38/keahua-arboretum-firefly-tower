@@ -8,7 +8,6 @@ class Silversword(ITerrestrial, Plant):
       Plant.__init__(self)
       
       self.species = "Silversword"
-      self.tolerate_shade = False
       self.tolerate_sun = True
       self.seeds_produced = 22
       self.insecticide_resistance = "High"

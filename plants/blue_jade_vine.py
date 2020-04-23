@@ -9,7 +9,6 @@ class BlueJadeVine(ITerrestrial, IFreshwater, Plant):
       Plant.__init__(self)
       
       self.species = "Blue Jade Vine"
-      self.tolerate_shade = True
       
       #Technically, the "Sunlight" entry on the readme says "Partial", 
       # but it also says it lives in grasslands, 

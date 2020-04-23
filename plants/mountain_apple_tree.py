@@ -8,7 +8,6 @@ class MountainAppleTree(ITerrestrial, Plant):
       Plant.__init__(self)
       
       self.species = "Mountain Apple Tree"
-      self.tolerate_shade = True
       self.tolerate_sun = False
       self.high_elevation = True
       self.seeds_produced = 17
