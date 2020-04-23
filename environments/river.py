@@ -20,7 +20,7 @@ class River(Environment):
                 raise AttributeError("There are too many animals to add another one")
     def add_plant(self, plant):
         try:
-            if plant.freshwater:
+            if plant.freshwater and plant.tolerate_stagnant == False:
                 self.plants.append(plant)
         except AttributeError:
             raise AttributeError("Cannot add plants that require stagnant water to a river biome")
