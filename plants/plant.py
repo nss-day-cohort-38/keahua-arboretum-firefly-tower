@@ -2,8 +2,8 @@ from interfaces import Identifiable
 
 class Plant(Identifiable):
 
-    def __init__(self, species):
-      self.__species = species
+    def __init__(self):
+      self.__species = ""
       self.tolerate_shade = False
       self.tolerate_sun = False
       self.high_elevation = False
