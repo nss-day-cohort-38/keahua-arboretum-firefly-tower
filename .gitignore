@@ -7,4 +7,3 @@ obj
 *.sqlite3
 .vscode
 dist
-fakemain*
