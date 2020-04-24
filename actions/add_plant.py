@@ -1,5 +1,4 @@
 import os
-from arboretum import Arboretum
 
 def add_plant(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -9,7 +8,7 @@ def add_plant(arboretum):
     print("4. Blue Jade Vine")
     
     def get_environ_instances(environ):
-        environ_instances = Arboretum.environ 
+        environ_instances = arboretum.environ 
         i = 1
         for environ_instance in environ_instances:
             print(f"{i}. {environ_instance}")
