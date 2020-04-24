@@ -3,7 +3,7 @@ from environments import Environment
 class Swamp(Environment):
     def __init__(self): 
         super().__init__()
-        self.animal_cap = 8
+        self.animal_cap = 1
         self.plant_cap = 12
         self.name="Swamp"
         
@@ -30,7 +30,6 @@ class Swamp(Environment):
             try:
                 if self.get_animal_count() < self.animal_cap:
                     self.animals.append(animal) 
-                    print(f"{animal} successfully added!")
                 else: 
                     print("There are too many animals to add another one")
             except AttributeError: 

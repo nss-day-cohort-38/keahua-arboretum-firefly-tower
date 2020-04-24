@@ -76,93 +76,104 @@ def release_animal(arboretum):
         answer2=input()
         if answer1 is not "" and answer2 is not "":
             animal = HawaiianHappyFaceSpider(answer1, answer2)
-            
-    
+    print("Release the animal into which biome?")        
     def environment_loop(): 
         index = 0 
         environments = []
-        environments.append(arboretum.rivers)
-        environments.append(arboretum.swamps)
-        environments.append(arboretum.coastlines)
-        environments.append(arboretum.grasslands)
-        environments.append(arboretum.mountains)
-        environments.append(arboretum.forests)
+        if len(arboretum.rivers) > 0:
+            if arboretum.rivers[0].test_animal(animal):
+                environments.append(arboretum.rivers)
+        if len(arboretum.swamps) > 0:
+            if arboretum.swamps[0].test_animal(animal):
+                environments.append(arboretum.swamps)
+        if len(arboretum.coastlines) > 0:
+            if arboretum.coastlines[0].test_animal(animal):
+                environments.append(arboretum.coastlines)
+        if len(arboretum.grasslands) > 0:
+            if arboretum.grasslands[0].test_animal(animal):
+                environments.append(arboretum.grasslands)
+        if len(arboretum.mountains) > 0:
+            if arboretum.mountains[0].test_animal(animal):
+                environments.append(arboretum.mountains)
+        if len(arboretum.forests) > 0:
+            if arboretum.forests[0].test_animal(animal):
+                environments.append(arboretum.forests)
         for environment in environments: 
             for i in environment: 
                 print(f'{index + 1}. {i} {i.get_animal_count()} animals')
-                index += 1       
-    environment_loop()
-
-    print("Release the animal into which biome?") 
-    print(f"1. River")
-    print(f"2. Swamp")
-    print(f"3. Coastline")
-    print(f"4. Grassland")
-    print(f"5. Mountain")
-    print(f"6. Forest")
-
-    choice = input("> ")
-       
-                
-    if choice == "1":
-        try: 
-            for river in arboretum.rivers: 
-                if len(river.animals) < river.animal_cap: 
-                    river.add_animal(animal)
-                else: 
-                    print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-        except AttributeError: 
-             print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-    if choice == "2":
-        try: 
-            for swamp in arboretum.swamps: 
-                if len(swamp.animals) < swamp.animal_cap: 
-                    swamp.add_animal(animal)
+                index += 1 
+        return environments
+                          
+    environments = environment_loop()
+    applicable_index = 0 
+   
+    choice = input(f"Choose environment to release {animal} > ")
+    choice_index = int(choice) - 1  
+    applicable_environments = environments[applicable_index]
+    for a in applicable_environments:
+        if len(a.animals) < a.animal_cap:
+            a.add_animal(animal)
+ 
+         
+    # if choice == "1":
+    #     try: 
+    #         for river in arboretum.rivers: 
+    #             if len(river.animals) < river.animal_cap: 
+    #                 river.add_animal(animal)
+    #             else: 
+    #                 print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    #     except AttributeError: 
+    #          print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    # if choice == "2":
+    #     try: 
+    #         for swamp in arboretum.swamps: 
+    #             if len(swamp.animals) < swamp.animal_cap: 
+    #                 swamp.add_animal(animal)
                     
-                else: 
-                    print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-        except AttributeError: 
-             print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-    if choice == "3":
-        try: 
-            for coastline in arboretum.coastlines: 
-                if len(coastline.animals) < coastline.animal_cap: 
-                    coastline.add_animal(animal)
+    #             else: 
+    #                 print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    #     except AttributeError: 
+    #          print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    # if choice == "3":
+    #     try: 
+    #         for coastline in arboretum.coastlines: 
+    #             if len(coastline.animals) < coastline.animal_cap: 
+    #                 coastline.add_animal(animal)
                     
-                else: 
-                    print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-        except AttributeError: 
-             print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-    if choice == "4":
-        try: 
-            for grassland in arboretum.grasslands: 
-                if len(grassland.animals) < grassland.animal_cap: 
-                    grassland.add_animal(animal)
+    #             else: 
+    #                 print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    #     except AttributeError: 
+    #          print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    # if choice == "4":
+    #     try: 
+    #         for grassland in arboretum.grasslands: 
+    #             if len(grassland.animals) < grassland.animal_cap: 
+    #                 grassland.add_animal(animal)
                     
-                else: 
-                    print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-        except AttributeError: 
-             print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-    if choice == "5":
-        try: 
-            for mountain in arboretum.mountains: 
-                if len(mountain.animals) < mountain.animal_cap: 
-                    mountain.add_animal(animal)
+    #             else: 
+    #                 print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    #     except AttributeError: 
+    #          print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    # if choice == "5":
+    #     try: 
+    #         for mountain in arboretum.mountains: 
+    #             if len(mountain.animals) < mountain.animal_cap: 
+    #                 mountain.add_animal(animal)
                     
-                else: 
-                    input("****   That biome is not large enough   **** ****     Please choose another one      ****")
-        except AttributeError: 
-             print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-    if choice == "6":
-        try: 
-            for forest in arboretum.forests: 
-                if len(forest.animals) < forest.animal_cap: 
-                    forest.add_animal(animal)
+    #             else: 
+    #                 input("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    #     except AttributeError: 
+    #          print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    # if choice == "6":
+    #     try: 
+    #         for forest in arboretum.forests: 
+    #             if len(forest.animals) < forest.animal_cap: 
+    #                 forest.add_animal(animal)
                     
-                else: 
-                    print("****   That biome is not large enough   **** ****     Please choose another one      ****")
-        except AttributeError: 
-             print("****   That biome is not large enough   **** ****")
-             print("****     Please choose another one      ****")
+    #             else: 
+    #                 print("****   That biome is not large enough   **** ****     Please choose another one      ****")
+    #     except AttributeError: 
+    #          print("****   That biome is not large enough   **** ****")
+    #          print("****     Please choose another one      ****")
 
     input("\n\nPress enter key to continue...")
