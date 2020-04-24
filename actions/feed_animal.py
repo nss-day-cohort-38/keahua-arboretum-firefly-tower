@@ -4,6 +4,13 @@ def feed_animal(arboretum):
     animal = None
 
     gecko = GoldDustDayGecko(5, "Simon")
+    spider = HawaiianHappyFaceSpider(5, "George")
+    kikakapu = Kikakapu(5, "Nancy")
+    goose = NeneGoose(5, "Bob")
+    opeapea = Opeapea(5, "Jenny")
+    pueo = Pueo(5, "Izzy")
+    dolphin = RiverDolphin(5, "Denny")
+    ulae = Ulae(5, "Sarah")
 
     print("1. Gold Dust Day Gecko")
     print("2. Hawaiian Happy Face Spider")
@@ -16,34 +23,49 @@ def feed_animal(arboretum):
 
     choice = input("Choose animal to feed > ")
 
-    animal = gecko
-
     if choice == "1":
+        animal = gecko
         for index, prey in enumerate(gecko.prey):
             print(f'{index + 1}. {prey}')
 
     if choice == "2":
-        pass
+        animal = spider
+        for index, prey in enumerate(spider.prey):
+            print(f'{index + 1}. {prey}')
 
     if choice == "3":
-        pass
+        animal = kikakapu
+        for index, prey in enumerate(kikakapu.prey):
+            print(f'{index + 1}. {prey}')
 
     if choice == "4":
-        pass
+        animal = goose
+        for index, prey in enumerate(goose.prey):
+            print(f'{index + 1}. {prey}')
 
     if choice == "5":
-        pass
+        animal = opeapea
+        for index, prey in enumerate(opeapea.prey):
+            print(f'{index + 1}. {prey}')
 
     if choice == "6":
-        pass
+        animal = pueo
+        for index, prey in enumerate(pueo.prey):
+            print(f'{index + 1}. {prey}')
 
     if choice == "7":
-        pass
+        animal = dolphin
+        for index, prey in enumerate(dolphin.prey):
+            print(f'{index + 1}. {prey}')
 
     if choice == "8":
-        pass
-
-    print("Choose what to feed it")
-    choice = input("> ")
+        animal = ulae
+        for index, prey in enumerate(ulae.prey):
+            print(f'{index + 1}. {prey}')
+        print("Choose what to feed it")
+        choice = input("> ")
+        
+        print(ulae.prey(choice))
 
     
+
