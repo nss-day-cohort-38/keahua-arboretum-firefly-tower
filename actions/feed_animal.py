@@ -54,9 +54,6 @@ def feed_animal(arboretum):
             if choice == "8":
                 animal = Ulae
 
-        # else: 
-        #     print("error")
-
             for index, instance in enumerate(animal.instances):
                 print(f"{index + 1}. {instance.name} the {instance.species}")
 
