@@ -13,29 +13,25 @@ def add_plant(arboretum):
         
         choice = input("Choose plant to cultivate > ")
         
-        def cultivate_plant(environment):
-            plant = environment()
-            print(f"{plant} cultivated")
-        
         if choice == "1":
             #TODO: fix this to be duck-typed
-            cultivate_plant(MountainAppleTree)
+            plant = MountainAppleTree()
             step_two([arboretum.mountains], plant)        
         
         if choice == "2":
             #TODO: fix this to be duck-typed
-            cultivate_plant(Silversword)
+            plant = Silversword()
             step_two([arboretum.grasslands], plant)
         
         if choice == "3":
             #TODO: fix this to be duck-typed
-            cultivate_plant(RainbowEucalyptusTree)
+            plant = RainbowEucalyptusTree()
             step_two([arboretum.forests], plant)
         
         if choice == "4":
             #TODO: fix this to be duck-typed
-            cultivate_plant(BlueJadeVine)
-            step_two([arboretum.forests, arboretum.swamps], plant)
+            plant = BlueJadeVine()
+            step_two([arboretum.grasslands, arboretum.swamps], plant)
             
     # Choosing an environment for the plant        
     def step_two(list_of_instance_lists, plant_instance): 
@@ -50,7 +46,8 @@ def add_plant(arboretum):
         def print_instance_list():
             for instance in possible_environ_instances:
                 index = possible_environ_instances.index(instance)
-                print(f"{index + 1}. {instance}")
+                plant_count = instance.get_plant_count()
+                print(f"{index + 1}. {instance} ({plant_count} plants)")
                     
         build_instance_list()
         print_instance_list()
@@ -58,7 +55,9 @@ def add_plant(arboretum):
         choice = input(f"Choose environment to plant {plant_instance} > ")
         index = int(choice) - 1 
         environment = possible_environ_instances[index]
-        environment.add_plant(plant_instance)
-        print(f"{plant_instance} added to {environment}")
+        confirm = input(f"Add {plant_instance} to {environment}: y/n ?")
+        if confirm == "y":
+            environment.add_plant(plant_instance)
+            print(f"{plant_instance} added to {environment}")
         
     step_one()
