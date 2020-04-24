@@ -13,7 +13,7 @@ class Arboretum:
     def rivers(self):
         return self.__rivers
 
-    def annex_river(self, river):
+    def annex_rivers(self, river):
         self.__rivers.append(river)
 
     @property
@@ -41,12 +41,12 @@ class Arboretum:
     def swamps(self):
         return self.__swamps
 
-    def annex_swamp(self, swamp):
+    def annex_swamps(self, swamp):
         self.__swamps.append(swamp)
 
     @property
     def forests(self):
-        return self.__forest
+        return self.__forests
 
-    def annex_forest(self, forest):
-        self.__forest.append(forest)
+    def annex_forests(self, forest):
+        self.__forests.append(forest)
