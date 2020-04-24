@@ -11,7 +11,7 @@ class HawaiianHappyFaceSpider(Animal, IFreshwater, IWalking):
         self.species = "Hawaiian Happy Face Spider"
         self.min_release_age = .5
         self.age = age
-        self.prey = { "Flies", "Ants" }
+        self.prey = [ "flies", "ants" ]
         self.tolerate_stagnant = True
         self.tolerate_current = False
 

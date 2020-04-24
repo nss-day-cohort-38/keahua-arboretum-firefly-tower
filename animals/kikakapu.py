@@ -11,7 +11,7 @@ class Kikakapu(Animal, IFreshwater, ISwimming):
         self.species = "Kikakapu"
         self.min_release_age = 1
         self.age = age
-        self.prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.prey = [ "trout", "mackarel", "salmon", "sardine" ]
         self.tolerate_stagnant = True
 
     def feed(self, prey):

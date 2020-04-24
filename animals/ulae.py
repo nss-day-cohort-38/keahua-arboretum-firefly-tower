@@ -11,7 +11,7 @@ class Ulae(Animal, ISaltwater, ISwimming):
         self.species = "Ulae"
         self.min_release_age = 1
         self.age = age
-        self.prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.prey = [ "trout", "mackarel", "salmon", "sardine" ]
 
     def feed(self, prey):
         if prey in self.prey:

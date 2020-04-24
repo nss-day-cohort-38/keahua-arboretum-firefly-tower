@@ -11,7 +11,7 @@ class Pueo(Animal, ITerrestrial, IFlying):
         self.species = "Pueo"
         self.min_release_age = 8
         self.age = age
-        self.prey = { "Mouse", "Rat" }
+        self.prey = [ "mouse", "rat" ]
         self.tolerate_shade = True
         self.tolerate_sun = True
 

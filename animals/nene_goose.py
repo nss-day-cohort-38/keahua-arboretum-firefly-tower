@@ -12,7 +12,7 @@ class NeneGoose(Animal, ITerrestrial, ISwimming, IWalking):
         self.species = "Nene Goose"
         self.min_release_age = 7
         self.age = age
-        self.prey = { "grass", "plant", "leaves" }
+        self.prey = [ "grass", "plant", "leaves" ]
         self.tolerate_sun = True
 
     def feed(self, prey):
