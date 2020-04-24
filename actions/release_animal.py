@@ -16,7 +16,12 @@ def release_animal(arboretum):
 
 
     if choice == "1":
-        animal = GoldDustDayGecko()
+        print("Enter name for Gold Dust Day Gecko : ")
+        answer1=input()
+        print("Enter age for Gold Dust Day Gecko : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = GoldDustDayGecko(answer1, answer2)
 
     if choice == "2":
         animal = RiverDolphin()
@@ -57,6 +62,22 @@ def release_animal(arboretum):
 
     for index, river in enumerate(arboretum.rivers):
         print(f'{index + 1}. River {river.id}')
+    
+    for index, swamp in enumerate(arboretum.swamps):
+        print(f'{index + 1}. Swamp {swamp.id}')
+    
+    for index, coastline in enumerate(arboretum.coastlines):
+        print(f'{index + 1}. Coastline {coastline.id}')
+    
+    for index, grassland in enumerate(arboretum.grasslands):
+        print(f'{index + 1}. Grassland {grassland.id}')
+
+    for index, mountain in enumerate(arboretum.mountains):
+        print(f'{index + 1}. Mountain {mountain.id}')
+    
+    for index, forest in enumerate(arboretum.forests):
+        print(f'{index + 1}. Forest {forest.id}')
+    
     print("Release the animal into which biome?")
     print("1. River")
     print("2. Swamp")
@@ -67,3 +88,13 @@ def release_animal(arboretum):
     choice = input("> ")
     if choice == "1":
       arboretum.rivers[int(choice) - 1].animals.append(animal)
+    if choice == "2":
+      arboretum.swamps[int(choice) - 1].animals.append(animal)
+    if choice == "3":
+      arboretum.coastlines[int(choice) - 1].animals.append(animal)
+    if choice == "4":
+      arboretum.grasslands[int(choice) - 1].animals.append(animal)
+    if choice == "5":
+      arboretum.mountains[int(choice) - 1].animals.append(animal)
+    if choice == "6":
+      arboretum.forests[int(choice) - 1].animals.append(animal)
