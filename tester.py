@@ -64,4 +64,4 @@ def printAllClassesAttributes(class_list):
 # classLoop(plant_classes)
 # classLoop(animal_classes)
 
-mass_add_to_environs()
+# mass_add_to_environs()
