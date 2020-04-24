@@ -22,6 +22,3 @@ class GoldDustDayGecko(Animal, ITerrestrial, IWalking):
 
     def move(self):
         print(f"The {self.species} walks")
-
-    def __str__(self):
-        return f'Gecko {self.id}'

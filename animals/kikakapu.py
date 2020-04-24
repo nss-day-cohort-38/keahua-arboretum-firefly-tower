@@ -22,6 +22,3 @@ class Kikakapu(Animal, IFreshwater, ISwimming):
 
     def move(self):
         print(f"The {self.species} swims")
-
-    def __str__(self):
-        return f'Kikakapu {self.id}'
