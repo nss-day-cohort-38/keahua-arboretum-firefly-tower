@@ -3,7 +3,6 @@ import random
 from animals import Animal, GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose, Opeapea, Pueo, RiverDolphin, Ulae
 from plants import RainbowEucalyptusTree, Silversword, MountainAppleTree, BlueJadeVine
 from environments import River, Swamp, Forest, Mountain, Coastline, Grassland 
-from arboretum import Arboretum
 
 animal_classes = [GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose, Opeapea, Pueo, RiverDolphin, Ulae]
 plant_classes = [RainbowEucalyptusTree, Silversword, MountainAppleTree, BlueJadeVine]
@@ -11,12 +10,31 @@ environment_classes = [Coastline, Forest, Grassland, Mountain, River, Swamp]
 
 names = ["Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella", "Oliver", "Sophia", "Benjamin", "Charlotte", "Tegan", "Darby", "Eisley", "Furlough", "Anthony", "Stuck", "Beef"]  
 
-def mass_add_to_environs():
+def mass_add_to_environs(arboretum):
+  
+    def annex(environment_instance):
+      annex_method = ""
+      #Depending on what class the instance is, 
+      #change the annex_method
+      if isinstance(environment_instance, River):
+          annex_method = arboretum.rivers.append
+      elif isinstance(environment_instance, Grassland):
+          annex_method = arboretum.grasslands.append
+      elif isinstance(environment_instance, Coastline):
+          annex_method = arboretum.coastlines.append
+      elif isinstance(environment_instance, Mountain):
+          annex_method = arboretum.mountains.append
+      elif isinstance(environment_instance, Swamp):
+          annex_method = arboretum.swamps.append
+      elif isinstance(environment_instance, Forest):
+          annex_method = arboretum.forests.append
+      annex_method(environment_instance)
+  
     for environment_class in environment_classes:
       print("-----------------------------------")
       #create a new environment instance
       environment_instance = environment_class()
-      Arboretum.annex_coastline(environment_instance)
+      annex(environment_instance)
       # annex(environment_instance)
       #loop through all animal classes
       for animal_class in animal_classes:
@@ -39,24 +57,7 @@ def mass_add_to_environs():
       #print the list of plants in the environment
       print(f"Plants in {environment_instance}", environment_instance.plants)
 
-def annex(environment_instance):
-    annex_method = ""
-    #Depending on what class the instance is, 
-    #change the annex_method
-    Arboretum.annex_coastline(environment_instance)
-    # if isinstance(environment_instance, River):
-    #     annex_method = Arboretum.annex_river
-    # elif isinstance(environment_instance, Grassland):
-    #     annex_method = Arboretum.annex_grassland
-    # elif isinstance(environment_instance, Coastline):
-    #     annex_method = Arboretum.annex_coastline
-    # elif isinstance(environment_instance, Mountain):
-    #     annex_method = Arboretum.annex_mountain
-    # elif isinstance(environment_instance, Swamp):
-    #     annex_method = Arboretum.annex_swamp
-    # elif isinstance(environment_instance, Forest):
-    #     annex_method = Arboretum.annex_forest
-    # annex_method(environment_instance)
+
 
 
 #Loop through a list of classes, initialize instances of them, and then print all that instances attributes

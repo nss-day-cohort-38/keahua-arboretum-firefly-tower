@@ -24,7 +24,7 @@ class Arboretum:
         self.__grasslands.append(grassland)
 
     @property
-    def coastline(self):
+    def coastlines(self):
         return self.__coastlines
 
     def annex_coastline(self, coastline):
