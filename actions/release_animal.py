@@ -1,11 +1,9 @@
 from animals import GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose, Opeapea, Pueo, RiverDolphin, Ulae
-from environments import River
-
 def release_animal(arboretum):
     animal = None
 
     print('1. Gold Dust Day Gecko')
-    print('2. RiverDolphin')
+    print('2. River Dolphin')
     print('3. Nene Goose')
     print('4. Kīkākapu')
     print('5. Pueo')
@@ -91,7 +89,7 @@ def release_animal(arboretum):
         environments.append(arboretum.forests)
         for environment in environments: 
             for i in environment: 
-                print(f'{index + 1}. {i.name} {i.get_animal_count()} animals')
+                print(f'{index + 1}. {i} {i.get_animal_count()} animals')
                 index += 1       
     environment_loop()
 
@@ -104,6 +102,8 @@ def release_animal(arboretum):
     print(f"6. Forest")
 
     choice = input("> ")
+       
+                
     if choice == "1":
         try: 
             for river in arboretum.rivers: 
