@@ -34,3 +34,12 @@ class Coastline(Environment):
                 print("Too salty to plant {plant} here")
         except AttributeError:
             print("Too salty to plant {plant} here")
+            
+    def test_plant(self, plant):
+        try:
+            if plant.saltwater:
+                return True
+            else:
+                return False
+        except AttributeError:
+            return False
