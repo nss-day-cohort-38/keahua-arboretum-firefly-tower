@@ -21,7 +21,7 @@ def build_facility_report(arboretum):
             print(f'    {plant} ({plant_key[:8]})')
         print("\n")
 
-    for coastline in arboretum.coastline:
+    for coastline in arboretum.coastlines:
         key = str(coastline.id)
         print(f'Coastline [{key[:8]}]')
         for animal in coastline.animals:
@@ -54,7 +54,7 @@ def build_facility_report(arboretum):
             print(f'    {plant} ({plant_key[:8]})')
         print("\n")
 
-    for forest in arboretum.forest:
+    for forest in arboretum.forests:
         key = str(forest.id)
         print(f'Forest [{key[:8]}]')
         for animal in forest.animals:
