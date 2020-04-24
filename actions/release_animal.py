@@ -1,4 +1,5 @@
 from animals import GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose, Opeapea, Pueo, RiverDolphin, Ulae
+from environments import River
 
 def release_animal(arboretum):
     animal = None
@@ -24,62 +25,83 @@ def release_animal(arboretum):
             animal = GoldDustDayGecko(answer1, answer2)
 
     if choice == "2":
-        animal = RiverDolphin()
+        print("Enter name for River Dolphin : ")
+        answer1=input()
+        print("Enter age for River Dolphin : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = RiverDolphin(answer1, answer2)
     
     if choice == "3":
-        animal = NeneGoose()
+        print("Enter name for Nene Goose : ")
+        answer1=input()
+        print("Enter age for Nene Goose : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = NeneGoose(answer1, answer2)
     
     if choice == "4":
-        animal = Kikakapu()
+        print("Enter name for Kikakapu : ")
+        answer1=input()
+        print("Enter age for Kikakapu : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = Kikakapu(answer1, answer2)
     
     if choice == "5":
-        animal = Pueo()
+        print("Enter name for Pueo : ")
+        answer1=input()
+        print("Enter age for Pueo : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = Pueo(answer1, answer2)
 
     if choice == "6":
-        animal = Ulae()
+        print("Enter name for Ulae : ")
+        answer1=input()
+        print("Enter age for Ulae : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = Ulae(answer1, answer2)
 
     if choice == "7":
-        animal = Opeapea() 
+        print("Enter name for Opeapea : ")
+        answer1=input()
+        print("Enter age for Opeapea : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = Opeapea(answer1, answer2) 
     
     if choice == "8":
-        animal = HawaiianHappyFaceSpider()
+        print("Enter name for Hawaiian Happy Face Spider : ")
+        answer1=input()
+        print("Enter age for Hawaiian Happy Face Spider : ")
+        answer2=input()
+        if answer1 is not "" and answer2 is not "":
+            animal = HawaiianHappyFaceSpider(answer1, answer2)
+
+# When the user enters in what to buy, then display all of the locations in which the animals can be stored. 
+# The current number of animals should be displayed for each location.
+    # for index, river in enumerate(arboretum.rivers):
+    #     print(f'{index + 1}. River {river.id}')
     
-
-    if choice == "4":
-        animal = Kikakapu()
-
-    if choice == "5":
-        animal = NeneGoose()
-
-    if choice == "6":
-        animal = Opeapea()
-
-    if choice == "7":
-        animal = Pueo()
-
-    if choice == "8":
-        animal = Ulae()
-
-    for index, river in enumerate(arboretum.rivers):
-        print(f'{index + 1}. River {river.id}')
+    # for index, swamp in enumerate(arboretum.swamps):
+    #     print(f'{index + 1}. Swamp {swamp.id}')
     
-    for index, swamp in enumerate(arboretum.swamps):
-        print(f'{index + 1}. Swamp {swamp.id}')
+    # for index, coastline in enumerate(arboretum.coastlines):
+    #     print(f'{index + 1}. Coastline {coastline.id}')
     
-    for index, coastline in enumerate(arboretum.coastlines):
-        print(f'{index + 1}. Coastline {coastline.id}')
-    
-    for index, grassland in enumerate(arboretum.grasslands):
-        print(f'{index + 1}. Grassland {grassland.id}')
+    # for index, grassland in enumerate(arboretum.grasslands):
+    #     print(f'{index + 1}. Grassland {grassland.id}')
 
-    for index, mountain in enumerate(arboretum.mountains):
-        print(f'{index + 1}. Mountain {mountain.id}')
+    # for index, mountain in enumerate(arboretum.mountains):
+    #     print(f'{index + 1}. Mountain {mountain.id}')
     
-    for index, forest in enumerate(arboretum.forests):
-        print(f'{index + 1}. Forest {forest.id}')
-    
+    # for index, forest in enumerate(arboretum.forests):
+    #     print(f'{index + 1}. Forest {forest.id}')
+
     print("Release the animal into which biome?")
-    print("1. River")
+    print(f"1. River ({len(River.animals)}) animals)")
     print("2. Swamp")
     print("3. Coastline")
     print("4. Grassland")
