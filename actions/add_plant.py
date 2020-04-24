@@ -19,13 +19,11 @@ def add_plant(arboretum):
     choice = input("Choose plant to cultivate > ")
 
     def what_environment(environment):
-        
+        pass
 
     if choice == "1":
         #TODO: fix this to be duck-typed        
-
-
-        
+        pass
       
     if choice == "2":
         #TODO: fix this to be duck-typed
