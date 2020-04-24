@@ -10,16 +10,16 @@ from environments import Forest
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    rivers = set([i for i in arboretum.rivers])
+    # rivers = set([i for i in arboretum.rivers])
     rivers_dict = dict()
-    for river in rivers:
+    for river in arboretum.rivers:
       rivers_dict[f"{river}"] = []
-      for i in rivers:
-        rivers_dict[f"{i.type}"].append(i.name.capitalize())
-        final_sentence = [f"{a.capitalize()}s ({' and '.join([', '.join(v[:-1]),v[-1]] if len(v) > 2 else v)})" for a in rivers for k, v in rivers_dict.items() if k == a]
+      for i in arboretum.rivers:
+        rivers_dict[f"{i}"]
+        final_sentence = [f"{a.capitalize()}s ({' and '.join([', '.join(v[:-1]),v[-1]] if len(v) > 2 else v)})" for a in arboretum.rivers for k, v in rivers_dict.items() if k == a]
 
         animals_plants_str = ' and '.join([', '.join(final_sentence[:-1]), final_sentence[-1]] if len(final_sentence) > 2 else final_sentence)
-        print(f"\n 1. River {animals_plants_str} \n")
+        print(f"\n 1. River ..{animals_plants_str}... TEST\n")
 
     print("1. River")
     print("2. Swamp")
