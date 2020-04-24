@@ -23,71 +23,110 @@ def feed_animal(arboretum):
 
         if choice == "1":
             animal = GoldDustDayGecko
+            step_two(animal)
         
 
         elif choice == "2":
             animal = HawaiianHappyFaceSpider
+            step_two(animal)
         
 
         elif choice == "3":
             animal = Kikakapu
+            step_two(animal)
         
 
         elif choice == "4":
             animal = NeneGoose
+            step_two(animal)
         
 
         elif choice == "5":
             animal = Opeapea
+            step_two(animal)
         
 
         elif choice == "6":
             animal = Pueo
+            step_two(animal)
         
 
         elif choice == "7":
             animal = RiverDolphin
+            step_two(animal)
         
 
         elif choice == "8":
             animal = Ulae
+            step_two(animal)
 
         else:
             input("\n\nAnimal species does not exist. Please press enter to try again...")
             step_one()
 
-        step_two(animal)
-
     def step_two(animal):
         os.system('cls' if os.name == 'nt' else 'clear')
 
-        for index, instance in enumerate(animal.instances):
+        if len(animal.instances) == 0:
+            input("\n\nThere are no individuals of this species in your arboretum. Please press enter to try again...")
+            step_one()
+        else:
+            for index, instance in enumerate(animal.instances):
                 print(f"{index + 1}. {instance.name} the {instance.species}")
     
         print("Choose which individual to feed")
         
-        choice = int(input("> "))
+        choice = input("> ")
+        try:
+            choice = int(choice)
+        except ValueError:
+            pass
 
         try:
-            animal = animal.instances[choice -1]
+            if isinstance(choice, int):
+                if choice <= 0:
+                    input("\n\nIndividual animal does not exist. Please press enter to try again...")
+                    step_two(animal)
+                else:
+                    animal = animal.instances[choice -1]
+                    step_three(animal)
+            else:
+                input("\n\nIndividual animal does not exist. Please press enter to try again...")
+                step_two(animal)
         except IndexError:
             input("\n\nIndividual animal does not exist. Please press enter to try again...")
             step_two(animal)
 
+    def step_three(animal):
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         for index, prey in enumerate(animal.prey):
             print(f'{index + 1}. {prey}')        
-    
+
         print("Choose what to feed it")
-        choice = int(input("> "))
+
+        choice = input("> ")
+        try:
+            choice = int(choice)
+        except ValueError:
+            pass
+
         print("\n")
 
         try:
-            animal.feed(animal.prey[choice - 1])
+            if isinstance(choice, int):
+                if choice <= 0:
+                    input("\n\nIndividual animal does not exist. Please press enter to try again...")
+                    step_three(animal)
+                else:
+                    animal.feed(animal.prey[choice - 1])
+                    input("\n\nPress enter key to continue...")
+            else: 
+                input("\n\nPrey does not exist. Please press enter to try again...")
+                step_three(animal)
         except IndexError:
             input("\n\nPrey does not exist. Please press enter to try again...")
-            step_one()
-
-        input("\n\nPress enter key to continue...")
+            step_three(animal)
 
     step_one()
 
