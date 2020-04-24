@@ -6,32 +6,57 @@ def add_plant(arboretum):
         
     # Choosing a plant to cultivate
     def step_one():
+        # Build a list of appropriate environment instances
+        # based on the duck-type checks of the environments'
+        # add_plant methods
+        def determine_environs(plant_instance):
+            appropriate_environs = []                
+            if len(arboretum.coastlines) > 0:
+                if arboretum.coastlines[0].test_plant(plant_instance):
+                    appropriate_environs.append(arboretum.coastlines)
+            if len(arboretum.forests) > 0:
+                if arboretum.forests[0].test_plant(plant_instance):
+                    appropriate_environs.append(arboretum.forests)
+            if len(arboretum.grasslands) > 0:
+                if arboretum.grasslands[0].test_plant(plant_instance):
+                    appropriate_environs.append(arboretum.grasslands)
+            if len(arboretum.mountains) > 0:
+                if arboretum.mountains[0].test_plant(plant_instance):
+                    appropriate_environs.append(arboretum.mountains)
+            if len(arboretum.rivers) > 0:
+                if arboretum.rivers[0].test_plant(plant_instance):
+                    appropriate_environs.append(arboretum.rivers)
+            if len(arboretum.swamps) > 0:
+                if arboretum.swamps[0].test_plant(plant_instance):
+                    appropriate_environs.append(arboretum.swamps)
+            return appropriate_environs
+        
+        #Present menu options
         print("1. Mountain Apple Tree")
         print("2. Silversword")
         print("3. Rainbow Eucalyptus Tree")
         print("4. Blue Jade Vine")
         
+        #Present and handle choice
         choice = input("Choose plant to cultivate > ")
-        
+        plant = ""
         if choice == "1":
-            #TODO: fix this to be duck-typed
             plant = MountainAppleTree()
-            step_two([arboretum.mountains], plant)        
         
-        if choice == "2":
-            #TODO: fix this to be duck-typed
+        elif choice == "2":
             plant = Silversword()
-            step_two([arboretum.grasslands], plant)
         
-        if choice == "3":
-            #TODO: fix this to be duck-typed
-            plant = RainbowEucalyptusTree()
-            step_two([arboretum.forests], plant)
+        elif choice == "3":
+            plant = RainbowEucalyptusTree()    
         
-        if choice == "4":
-            #TODO: fix this to be duck-typed
+        elif choice == "4":
             plant = BlueJadeVine()
-            step_two([arboretum.grasslands, arboretum.swamps], plant)
+            
+        else: 
+            step_one()
+            
+        environs = determine_environs(plant)
+        step_two(environs, plant)        
             
     # Choosing an environment for the plant        
     def step_two(list_of_instance_lists, plant_instance): 
