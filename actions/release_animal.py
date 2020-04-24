@@ -14,6 +14,7 @@ def release_animal(arboretum):
 
     choice = input("Choose animal to release > ")
 
+
     if choice == "1":
         animal = GoldDustDayGecko()
 
@@ -39,12 +40,30 @@ def release_animal(arboretum):
         animal = HawaiianHappyFaceSpider()
     
 
+    if choice == "4":
+        animal = Kikakapu()
+
+    if choice == "5":
+        animal = NeneGoose()
+
+    if choice == "6":
+        animal = Opeapea()
+
+    if choice == "7":
+        animal = Pueo()
+
+    if choice == "8":
+        animal = Ulae()
+
     for index, river in enumerate(arboretum.rivers):
         print(f'{index + 1}. River {river.id}')
-
     print("Release the animal into which biome?")
+    print("1. River")
+    print("2. Swamp")
+    print("3. Coastline")
+    print("4. Grassland")
+    print("5. Mountain")
+    print("6. Forest")
     choice = input("> ")
-
-    arboretum.rivers[int(choice) - 1].animals.append(animal)
-
-
+    if choice == "1":
+      arboretum.rivers[int(choice) - 1].animals.append(animal)
