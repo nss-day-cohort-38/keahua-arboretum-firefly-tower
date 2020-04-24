@@ -42,3 +42,14 @@ class Forest(Environment):
                 self.plants.append(plant)
             else:
                 print("There are too many plants to add another one")
+
+    def test_plant(self, plant):
+        right_plant = False
+        try:
+            if plant.terrestrial and plant.tolerate_shade:
+                right_plant = True
+        except AttributeError:
+            right_plant = False
+        if self.get_plant_count() == self.plant_cap:
+            right_plant = False
+        return right_plant

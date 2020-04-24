@@ -56,3 +56,14 @@ class Swamp(Environment):
                     print("There are too many plants to add another one")
             except AttributeError: 
                     print("There are too many plants to add another one")
+
+    def test_plant(self, plant):
+        right_plant = False
+        try:
+            if plant.tolerate_stagnant == True:
+                right_plant = True
+        except AttributeError:
+            right_plant = False
+        if self.get_plant_count() == self.plant_cap:
+            right_plant = False
+        return right_plant
