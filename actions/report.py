@@ -1,7 +1,7 @@
 def build_facility_report(arboretum):
     for river in arboretum.rivers:
         key = str(river.id)
-        print(f'River [{key[:8]}]')
+        print(f'{river}')
         for animal in river.animals:
             animal_key = str(animal.id)
             print(f'    {animal} ({animal_key[:8]})')
@@ -12,7 +12,7 @@ def build_facility_report(arboretum):
 
     for swamp in arboretum.swamps:
         key = str(swamp.id)
-        print(f'Swamp [{key[:8]}]')
+        print(f'{swamp}')
         for animal in swamp.animals:
             animal_key = str(animal.id)
             print(f'    {animal} ({animal_key[:8]})')
@@ -23,7 +23,7 @@ def build_facility_report(arboretum):
 
     for coastline in arboretum.coastlines:
         key = str(coastline.id)
-        print(f'Coastline [{key[:8]}]')
+        print(f'{coastline}')
         for animal in coastline.animals:
             animal_key = str(animal.id)
             print(f'    {animal} ({animal_key[:8]})')
@@ -34,7 +34,7 @@ def build_facility_report(arboretum):
 
     for mountain in arboretum.mountains:
         key = str(mountain.id)
-        print(f'Mountain [{key[:8]}]')
+        print(f'{mountain}')
         for animal in mountain.animals:
             animal_key = str(animal.id)
             print(f'    {animal} ({animal_key[:8]})')
@@ -45,7 +45,7 @@ def build_facility_report(arboretum):
 
     for grassland in arboretum.grasslands:
         key = str(grassland.id)
-        print(f'Grassland [{key[:8]}]')
+        print(f'{grassland}')
         for animal in grassland.animals:
             animal_key = str(animal.id)
             print(f'    {animal} ({animal_key[:8]})')
@@ -56,7 +56,7 @@ def build_facility_report(arboretum):
 
     for forest in arboretum.forests:
         key = str(forest.id)
-        print(f'Forest [{key[:8]}]')
+        print(f'{forest}')
         for animal in forest.animals:
             animal_key = str(animal.id)
             print(f'    {animal} ({animal_key[:8]})')
