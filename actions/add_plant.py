@@ -6,12 +6,18 @@ def add_plant(arboretum):
         
     # Choosing a plant to cultivate
     def step_one():
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         # Build a list of appropriate environment instances
         # based on the duck-type checks of the environments'
         # add_plant methods
         def determine_environs(plant_instance):
-            appropriate_environs = []                
+            # Starting a list of appropriate environments
+            appropriate_environs = []
+            # check if there are instances of the environment
             if len(arboretum.coastlines) > 0:
+                # use the test_plant method, which will return true if
+                # the plant is valid for that environment
                 if arboretum.coastlines[0].test_plant(plant_instance):
                     appropriate_environs.append(arboretum.coastlines)
             if len(arboretum.forests) > 0:
@@ -54,8 +60,13 @@ def add_plant(arboretum):
             
         else: 
             step_one()
-            
+        
+        #build a list of environment appropriate environ instances    
         environs = determine_environs(plant)
+        
+        # move on to step two, with 
+        # the appropriate environ instances 
+        # and selected plant instance 
         step_two(environs, plant)        
             
     # Choosing an environment for the plant        
@@ -80,7 +91,7 @@ def add_plant(arboretum):
         choice = input(f"Choose environment to plant {plant_instance} > ")
         index = int(choice) - 1 
         environment = possible_environ_instances[index]
-        confirm = input(f"Add {plant_instance} to {environment}: y/n ?")
+        confirm = input(f"Add {plant_instance} to {environment}: y/n? > ")
         if confirm == "y":
             environment.add_plant(plant_instance)
             print(f"{plant_instance} added to {environment}")
