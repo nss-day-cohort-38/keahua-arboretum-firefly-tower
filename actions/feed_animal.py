@@ -58,14 +58,18 @@ def feed_animal(arboretum):
                 print(f"{index + 1}. {instance.name} the {instance.species}")
 
         except AttributeError:
-            input("\n\nAnimal does not exist. Please press enter to try again...")
+            input("\n\nAnimal species does not exist. Please press enter to try again...")
             step_one()
     
-
         print("Choose which individual to feed")
+        
         choice = int(input("> "))
 
-        animal = animal.instances[choice -1]
+        try:
+            animal = animal.instances[choice -1]
+        except IndexError:
+            input("\n\nIndividual animal does not exist. Please press enter to try again...")
+            step_one()
 
         for index, prey in enumerate(animal.prey):
             print(f'{index + 1}. {prey}')        
@@ -73,9 +77,15 @@ def feed_animal(arboretum):
         print("Choose what to feed it")
         choice = int(input("> "))
         print("\n")
-        animal.feed(animal.prey[choice - 1])
+
+        try:
+            animal.feed(animal.prey[choice - 1])
+        except IndexError:
+            input("\n\nPrey does not exist. Please press enter to try again...")
+            step_one()
 
         input("\n\nPress enter key to continue...")
+        pass
 
     step_one()
 
