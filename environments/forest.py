@@ -3,6 +3,7 @@ class Forest(Environment):
     def __init__(self):
       super().__init__()
       self.characteristics = "Rainy, Shady"
+      self.name = "Forest"
       self.animal_cap = 20
       self.plant_cap = 32
     def add_animal(self, animal):

@@ -4,6 +4,7 @@ class Coastline(Environment):
     def __init__(self):
       super().__init__()
       self.characteristics = "Saltwater"
+      self.name = "Coastline"
       self.animal_cap = 15
       self.plant_cap = 3
     def add_animal(self, animal):

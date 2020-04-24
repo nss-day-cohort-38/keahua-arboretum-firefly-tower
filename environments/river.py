@@ -5,6 +5,7 @@ class River(Environment):
       self.characteristics = "Fresh Water"
       self.animal_cap = 12
       self.plant_cap = 6
+      self.name="River"
     def add_animal(self, animal):
         right_animal = False
         try:

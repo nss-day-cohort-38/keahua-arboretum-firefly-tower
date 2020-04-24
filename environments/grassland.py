@@ -5,6 +5,7 @@ class Grassland(Environment):
         super().__init__()
         self.animal_cap = 22
         self.plant_cap = 15
+        self.name="Grassland"
         
     def add_animal(self, animal):
         right_animal = False

@@ -5,6 +5,7 @@ class Mountain(Environment):
         super().__init__()
         self.animal_cap = 6
         self.plant_cap = 4
+        self.name="Mountain"
         
     def add_animal(self, animal):
         right_animal = False

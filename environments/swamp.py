@@ -5,6 +5,7 @@ class Swamp(Environment):
         super().__init__()
         self.animal_cap = 8
         self.plant_cap = 12
+        self.name="Swamp"
         
     def add_animal(self, animal):
         right_animal = False
