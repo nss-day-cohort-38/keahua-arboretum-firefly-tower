@@ -13,9 +13,13 @@ names = ["Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella"
 def mass_add_to_environs(arboretum):
   
     def annex(environment_instance):
+      """Annex an environment to the Arboretum
+
+      Arguments: the environment instance to annex
+      """
       annex_method = ""
       #Depending on what class the instance is, 
-      #change the annex_method
+      #change the annex_method to the appropriate append
       if isinstance(environment_instance, River):
           annex_method = arboretum.rivers.append
       elif isinstance(environment_instance, Grassland):
@@ -30,24 +34,25 @@ def mass_add_to_environs(arboretum):
           annex_method = arboretum.forests.append
       annex_method(environment_instance)
   
+    #loop through every environment class
     for environment_class in environment_classes:
-      print("-----------------------------------")
-      #create a new environment instance
+      #print("-----------------------------------")
+      #create a new instance for the current environment
       environment_instance = environment_class()
+      #annex that environment to the arboretum
       annex(environment_instance)
-      # annex(environment_instance)
-      #loop through all animal classes
+      #loop through all animal classes and add each one to the instance
       for animal_class in animal_classes:
           #Choose a random name:
           name  = random.choice(names)
           #create an animal instance, pass in an age and name
-          age = 0
+          age = 5
           animal_instance = animal_class(age, name)
           #add the animal instance to the current environment instance
           environment_instance.add_animal(animal_instance)
       #print the list of animals in the environment
-      print(f"Animals in {environment_instance}", environment_instance.animals)
-      print()
+      #print(f"Animals in {environment_instance}", environment_instance.animals)
+      #print()
       #loop through every plant class
       for plant_class in plant_classes:
           #create a plant instance
@@ -55,10 +60,7 @@ def mass_add_to_environs(arboretum):
           #add the plant to the current environment instance
           environment_instance.add_plant(plant_instance)
       #print the list of plants in the environment
-      print(f"Plants in {environment_instance}", environment_instance.plants)
-
-
-
+      #print(f"Plants in {environment_instance}", environment_instance.plants)
 
 #Loop through a list of classes, initialize instances of them, and then print all that instances attributes
 def printAllClassesAttributes(class_list):
