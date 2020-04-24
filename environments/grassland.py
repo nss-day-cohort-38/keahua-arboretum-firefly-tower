@@ -21,7 +21,6 @@ class Grassland(Environment):
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
-                print(f"{animal} successfully added!")
             else:
                 print(f"{animal} is not old enough to be released")
                 right_animal = False
