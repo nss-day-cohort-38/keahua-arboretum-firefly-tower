@@ -26,6 +26,24 @@ class Coastline(Environment):
                 self.animals.append(animal)
             else:
                 print("There are too many animals to add another one")
+    def test_animal(self, animal):
+        right_animal = False
+        try:
+            if animal.aquatic and animal.saltwater:
+                right_animal = True
+            else:
+                right_animal = False
+        except AttributeError:
+            right_animal = False
+        if right_animal:
+            if animal.min_release_age <= animal.age:
+                right_animal = True
+            else:
+                right_animal = False
+        if self.get_animal_count() == self.animal_cap:
+            right_animal = False
+        return right_animal
+
     def add_plant(self, plant):
         try:
             if plant.saltwater:
