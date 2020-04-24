@@ -101,7 +101,7 @@ def release_animal(arboretum):
     #     print(f'{index + 1}. Forest {forest.id}')
 
     print("Release the animal into which biome?")
-    print(f"1. River ({len(River.animals)}) animals)")
+    print(f"1. River ({len(River.animals)} animals)")
     print("2. Swamp")
     print("3. Coastline")
     print("4. Grassland")
