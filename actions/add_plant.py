@@ -67,8 +67,12 @@ def add_plant(arboretum):
         # move on to step two, with 
         # the appropriate environ instances 
         # and selected plant instance 
-        step_two(environs, plant)        
-            
+        if len(environs) > 0:       
+            step_two(environs, plant) 
+        else:
+            input("There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
+            step_one()
+                
     # Choosing an environment for the plant        
     def step_two(list_of_instance_lists, plant_instance): 
         os.system('cls' if os.name == 'nt' else 'clear')
