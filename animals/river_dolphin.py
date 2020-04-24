@@ -22,6 +22,3 @@ class RiverDolphin(Animal, IFreshwater, ISwimming, ISaltwater):
 
     def move(self):
         print(f"The {self.species} swims")
-
-    def __str__(self):
-        return f'River Dolphin {self.id}'

@@ -17,6 +17,6 @@ class Animal(Identifiable):
         return f"The {self.species} ate a {prey} for a meal"
 
     def __str__(self):
-        return f'{self.species}'
+        return f'{self.name} the {self.species}'
 
     

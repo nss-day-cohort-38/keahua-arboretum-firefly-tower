@@ -20,21 +20,21 @@ class Arboretum:
     def grasslands(self):
         return self.__grasslands
 
-    def annex_grasslands(self, grassland):
+    def annex_grassland(self, grassland):
         self.__grasslands.append(grassland)
 
     @property
     def coastlines(self):
         return self.__coastlines
 
-    def annex_coastlines(self, coastline):
+    def annex_coastline(self, coastline):
         self.__coastlines.append(coastline)
 
     @property
     def mountains(self):
         return self.__mountains
 
-    def annex_mountains(self, mountains):
+    def annex_mountain(self, mountains):
         self.__mountains.append(mountains)
 
     @property

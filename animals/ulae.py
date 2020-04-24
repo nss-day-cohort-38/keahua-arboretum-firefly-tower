@@ -21,6 +21,3 @@ class Ulae(Animal, ISaltwater, ISwimming):
 
     def move(self):
         print(f"The {self.species} swims")
-
-    def __str__(self):
-        return f'Ulae {self.id}'

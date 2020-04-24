@@ -23,6 +23,3 @@ class HawaiianHappyFaceSpider(Animal, IFreshwater, IWalking):
 
     def move(self):
         print(f"The {self.species} walks")
-
-    def __str__(self):
-        return f'Hawaiian Happy Face Spider {self.id}'

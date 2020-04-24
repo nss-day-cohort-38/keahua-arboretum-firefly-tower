@@ -26,6 +26,3 @@ class NeneGoose(Animal, ITerrestrial, ISwimming, IWalking):
 
     def swim(self):
         print(f"The {self.species} swims")
-
-    def __str__(self):
-        return f'Nene Goose {self.id}'
