@@ -11,6 +11,7 @@ class Forest(Environment):
         try:
             if animal.terrestrial and animal.tolerate_shade:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"Cannot add {animal}: aquatic, or terrestrial animals that can't tolerate shade to a forest")
         except AttributeError:
@@ -18,6 +19,7 @@ class Forest(Environment):
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"{animal} is not old enough to be released")
                 right_animal = False

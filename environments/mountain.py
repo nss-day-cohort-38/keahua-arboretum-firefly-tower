@@ -12,6 +12,7 @@ class Mountain(Environment):
         try:
             if animal.high_elevation == True:
                 right_animal = True 
+                print(f"{animal} successfully added!")
             else: 
                 print(f"Cannot add {animal} without ability to withstand high elevations to a mountain.")
         except AttributeError:
@@ -20,6 +21,7 @@ class Mountain(Environment):
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"{animal} is not old enough to be released")
                 right_animal = False

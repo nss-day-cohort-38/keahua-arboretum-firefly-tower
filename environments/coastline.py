@@ -12,6 +12,7 @@ class Coastline(Environment):
         try:
             if animal.aquatic and animal.saltwater:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"Cannot add {animal}: non-aquatic, or freshwater animals to a coastline")
         except AttributeError:
@@ -19,6 +20,7 @@ class Coastline(Environment):
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"{animal} is not old enough to be released")
                 right_animal = False

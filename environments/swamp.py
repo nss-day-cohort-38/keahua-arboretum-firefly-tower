@@ -13,6 +13,7 @@ class Swamp(Environment):
         try: 
             if animal.tolerate_stagnant == True:
                 right_animal = True 
+                print(f"{animal} successfully added!")
             else:
                 print(f"Cannot add {animal} that cannot live in stagnant fresh waters to a swamp.")
         except AttributeError:
@@ -29,6 +30,7 @@ class Swamp(Environment):
             try:
                 if self.get_animal_count() < self.animal_cap:
                     self.animals.append(animal) 
+                    print(f"{animal} successfully added!")
                 else: 
                     print("There are too many animals to add another one")
             except AttributeError: 

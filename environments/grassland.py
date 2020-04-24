@@ -12,6 +12,7 @@ class Grassland(Environment):
         try:
             if animal.high_elevation == False and animal.tolerate_sun == True:
                 right_animal = True 
+                print(f"{animal} successfully added!")
             else: 
                 print(f"Cannot add {animal} that does not tolerate sun or high elevation to a grassland.")
         except AttributeError:
@@ -20,6 +21,7 @@ class Grassland(Environment):
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"{animal} is not old enough to be released")
                 right_animal = False

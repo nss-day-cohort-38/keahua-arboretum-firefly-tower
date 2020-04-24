@@ -11,6 +11,7 @@ class River(Environment):
         try:
             if animal.aquatic and animal.tolerate_current and animal.freshwater:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else: 
                 print(f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
         except AttributeError:
@@ -18,6 +19,7 @@ class River(Environment):
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"{animal} is not old enough to be released")
                 right_animal = False
