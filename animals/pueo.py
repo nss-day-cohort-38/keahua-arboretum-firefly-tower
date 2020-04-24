@@ -23,6 +23,3 @@ class Pueo(Animal, ITerrestrial, IFlying):
 
     def move(self):
         print(f"The {self.species} flies")
-
-    def __str__(self):
-        return f'Pueo {self.id}'

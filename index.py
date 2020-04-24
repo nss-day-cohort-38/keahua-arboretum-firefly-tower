@@ -53,8 +53,7 @@ def main_menu():
     #"Secret Seven": seed data with tester script
     if choice == "7":
         mass_add_to_environs(keahua)
-        main_menu()
-
+        
     if choice != "6":
         main_menu()
         
