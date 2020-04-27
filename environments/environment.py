@@ -10,6 +10,8 @@ class Environment(IContainsAnimals, IContainsPlants, Identifiable):
         return len(self.animals)
     def get_plant_count(self):
         return len(self.plants)
+    def __str__(self):
+        return f"{self.name} [{str(self.id)[:8]}]"
     
     
 
