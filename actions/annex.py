@@ -5,7 +5,7 @@ from environments import Coastline
 from environments import Grassland
 from environments import Mountain
 from environments import Forest
-
+from .header import header
 
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -76,6 +76,8 @@ def annex_habitat(arboretum):
 
 
 
+    header("Annex Habitat")
+    
     print("1. River")
     print("2. Swamp")
     print("3. Coastline")

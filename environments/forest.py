@@ -3,6 +3,7 @@ class Forest(Environment):
     def __init__(self):
       super().__init__()
       self.characteristics = "Rainy, Shady"
+      self.name = "Forest"
       self.animal_cap = 20
       self.plant_cap = 32
     def add_animal(self, animal):
@@ -10,6 +11,7 @@ class Forest(Environment):
         try:
             if animal.terrestrial and animal.tolerate_shade:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"Cannot add {animal}: aquatic, or terrestrial animals that can't tolerate shade to a forest")
         except AttributeError:

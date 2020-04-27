@@ -4,6 +4,7 @@ class Coastline(Environment):
     def __init__(self):
       super().__init__()
       self.characteristics = "Saltwater"
+      self.name = "Coastline"
       self.animal_cap = 15
       self.plant_cap = 3
     def add_animal(self, animal):
@@ -11,6 +12,7 @@ class Coastline(Environment):
         try:
             if animal.aquatic and animal.saltwater:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else:
                 print(f"Cannot add {animal}: non-aquatic, or freshwater animals to a coastline")
         except AttributeError:

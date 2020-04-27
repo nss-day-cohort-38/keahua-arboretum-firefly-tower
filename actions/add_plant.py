@@ -1,10 +1,12 @@
 import os
 from plants import RainbowEucalyptusTree, Silversword, MountainAppleTree, BlueJadeVine
+from .header import header
 
 
 def add_plant(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
-
+    title = "Cultivate Plant"
+        
     # Choosing a plant to cultivate
     def step_one():
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -37,8 +39,10 @@ def add_plant(arboretum):
                 if arboretum.swamps[0].test_plant(plant_instance):
                     appropriate_environs.append(arboretum.swamps)
             return appropriate_environs
-
-        # Present menu options
+        
+        #Present menu options
+        header(title)
+        
         print("1. Mountain Apple Tree")
         print("2. Silversword")
         print("3. Rainbow Eucalyptus Tree")
@@ -78,8 +82,9 @@ def add_plant(arboretum):
     # Choosing an environment for the plant
     def step_two(list_of_instance_lists, plant_instance):
         os.system('cls' if os.name == 'nt' else 'clear')
-        possible_environ_instances = []
-
+        header(title)
+        possible_environ_instances = []      
+            
         def build_instance_list():
             for instance_list in list_of_instance_lists:
                 for instance in instance_list:
