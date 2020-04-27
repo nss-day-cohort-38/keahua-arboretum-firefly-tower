@@ -54,4 +54,7 @@ class River(Environment):
                 print(f"Cannot add {plant} that require stagnant water to a river biome")
         except AttributeError:
             print(f"Cannot add {plant} that require stagnant water to a river biome")
-    
+            
+    def test_plant(self, plant):
+        #No plants can grow in the river
+        return False
