@@ -99,7 +99,7 @@ def release_animal(arboretum):
                 environments.append(arboretum.forests)
         for environment in environments: 
             for i in environment: 
-                    print(f'{index + 1}. {i} {i.get_animal_count()} animals')
+                    print(f'{index + 1}. {i} ({i.get_animal_count()} animals)')
                     index += 1 
         return environments
                           
