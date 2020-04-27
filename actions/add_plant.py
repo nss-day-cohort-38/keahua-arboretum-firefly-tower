@@ -100,17 +100,25 @@ def add_plant(arboretum):
         print_instance_list()
         
         choice = input(f"Choose environment to plant {plant_instance} > ")
-        #TODO: add check to see if its an integer
-        index = int(choice) - 1 
-        #Checking if the choice is within the correct index range:
-        if index > 0 and index < len(possible_environ_instances):
-            environment = possible_environ_instances[index]
-            confirm = input(f"Add {plant_instance} to {environment}: y/n? > ")
-            if confirm == "y":
-                environment.add_plant(plant_instance)
-                print(f"{plant_instance} added to {environment}")
-        else:
+        # If choice is not an integer, it will trigger the exception
+        try: 
+            index = int(choice) - 1
+            #Checking if the choice is within the correct index range:
+            if index >= 0 and index < len(possible_environ_instances):
+                # Choose the matching environment index
+                environment = possible_environ_instances[index]
+                confirm = input(f"Add {plant_instance} to {environment}: y/n? > ")
+                if confirm == "y":
+                    environment.add_plant(plant_instance)
+                    print(f"{plant_instance} added to {environment}")
+                else:
+                    step_two(list_of_instance_lists, plant_instance)
+            else:
+                input(f"Choose a valid option. Hit ENTER to try again. >")
+                step_two(list_of_instance_lists, plant_instance)
+        except ValueError:
             input(f"Choose a valid option. Hit ENTER to try again. >")
             step_two(list_of_instance_lists, plant_instance)
+
         
     step_one()
