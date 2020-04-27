@@ -75,8 +75,7 @@ def release_animal(arboretum):
         print("Enter name for Hawaiian Happy Face Spider : ")
         answer2=input()
         if answer1 is not "" and answer2 is not "":
-            animal = HawaiianHappyFaceSpider(answer1, answer2)
-    print("Release the animal into which biome?")        
+            animal = HawaiianHappyFaceSpider(answer1, answer2)     
     def environment_loop(): 
         index = 0 
         environments = []
@@ -106,11 +105,16 @@ def release_animal(arboretum):
                           
     environments = environment_loop()
     applicable_index = 0 
-   
-    choice = input(f"Choose environment to release {animal} > ")
-    choice_index = int(choice) - 1 
-    applicable_environments = environments[applicable_index]
-    for a in applicable_environments:
-            a.add_animal(animal)
+    if len(environments) == 0: 
+        print("No applicable biomes, try again")
+    else: 
+        choice = input(f"Choose environment to release {animal} > ")
+        try:
+                choice_index = int(choice) - 1 
+                applicable_environments = environments[applicable_index]
+                for a in applicable_environments:
+                    a.add_animal(animal)
+        except ValueError:
+                pass
 
     input("\n\nPress enter key to continue...")
