@@ -6,18 +6,37 @@ def release_animal(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
     header("Release Animal")
 
-    print('1. Gold Dust Day Gecko')
-    print('2. River Dolphin')
-    print('3. Nene Goose')
-    print('4. Kīkākapu')
-    print('5. Pueo')
-    print("6. 'Ulae")
-    print("7. Ope'ape'a")
-    print("8. Happy-Face Spider")
-    
-    animal = None
+    arboretum_biome_selection = []
+    arboretum_biome_selection.append(arboretum.rivers)
+    arboretum_biome_selection.append(arboretum.swamps)
+    arboretum_biome_selection.append(arboretum.coastlines)
+    arboretum_biome_selection.append(arboretum.forests)
+    arboretum_biome_selection.append(arboretum.mountains)
+    arboretum_biome_selection.append(arboretum.grasslands)
 
-    choice = input("Choose animal to release > ")
+    def all(arboretum_biome_selection):
+        for biome in arboretum_biome_selection:
+            if len(biome) == 0: 
+                return False
+            else:
+                return True
+    all(arboretum_biome_selection)
+    if all(arboretum_biome_selection) == False: 
+        input("No habitats annexed. Press enter to return to the main menu...")
+        return 0 
+    else: 
+        print('1. Gold Dust Day Gecko')
+        print('2. River Dolphin')
+        print('3. Nene Goose')
+        print('4. Kīkākapu')
+        print('5. Pueo')
+        print("6. 'Ulae")
+        print("7. Ope'ape'a")
+        print("8. Happy-Face Spider")
+        
+        animal = None
+
+        choice = input("Choose animal to release > ")
 
     if choice == "1":
         print("Enter age for Gold Dust Day Gecko : ")
