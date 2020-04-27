@@ -7,7 +7,7 @@ animal_classes = [GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose
 plant_classes = [RainbowEucalyptusTree, Silversword, MountainAppleTree, BlueJadeVine]
 environment_classes = [Coastline, Forest, Grassland, Mountain, River, Swamp]
 
-path = "/home/kroogz/workspace/keahua-arboretum-firefly-tower/keahua.txt"
+path = "./keahua.txt"
 
 def annex(arboretum, environment_instance):
       """Annex an environment to the Arboretum
