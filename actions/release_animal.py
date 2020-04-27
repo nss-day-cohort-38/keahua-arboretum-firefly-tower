@@ -100,15 +100,15 @@ def release_animal(arboretum):
                 environments.append(arboretum.forests)
         for environment in environments: 
             for i in environment: 
-                print(f'{index + 1}. {i} {i.get_animal_count()} animals')
-                index += 1 
+                    print(f'{index + 1}. {i} {i.get_animal_count()} animals')
+                    index += 1 
         return environments
                           
     environments = environment_loop()
     applicable_index = 0 
    
     choice = input(f"Choose environment to release {animal} > ")
-    choice_index = int(choice) - 1  
+    choice_index = int(choice) - 1 
     applicable_environments = environments[applicable_index]
     for a in applicable_environments:
         if len(a.animals) < a.animal_cap:
