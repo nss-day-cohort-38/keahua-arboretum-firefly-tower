@@ -1,6 +1,10 @@
+import os
 from animals import GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose, Opeapea, Pueo, RiverDolphin, Ulae
+from .header import header
+
 def release_animal(arboretum):
-    animal = None
+    os.system('cls' if os.name == 'nt' else 'clear')
+    header("Release Animal")
 
     print('1. Gold Dust Day Gecko')
     print('2. River Dolphin')
@@ -10,6 +14,8 @@ def release_animal(arboretum):
     print("6. 'Ulae")
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
+    
+    animal = None
 
     choice = input("Choose animal to release > ")
 

@@ -1,12 +1,15 @@
 import os
 from animals import Animal, GoldDustDayGecko, HawaiianHappyFaceSpider, Kikakapu, NeneGoose, Opeapea, Pueo, RiverDolphin, Ulae
-
+from .header import header
 
 def feed_animal(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
+    title = "Feed Animal"
 
     def step_one():
         os.system('cls' if os.name == 'nt' else 'clear')
+        
+        header(title)
 
         animal = None
 
@@ -66,6 +69,8 @@ def feed_animal(arboretum):
 
     def step_two(animal):
         os.system('cls' if os.name == 'nt' else 'clear')
+        
+        header(title)
 
         if len(animal.instances) == 0:
             input("\n\nThere are no individuals of this species in your arboretum. Please press enter to try again...")
@@ -99,6 +104,8 @@ def feed_animal(arboretum):
 
     def step_three(animal):
         os.system('cls' if os.name == 'nt' else 'clear')
+        
+        header(title)
 
         for index, prey in enumerate(animal.prey):
             print(f'{index + 1}. {prey}')        
