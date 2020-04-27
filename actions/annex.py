@@ -10,16 +10,74 @@ from environments import Forest
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    # rivers = set([i for i in arboretum.rivers])
-    rivers_dict = dict()
-    for river in arboretum.rivers:
-      rivers_dict[f"{river}"] = []
-      for i in arboretum.rivers:
-        rivers_dict[f"{i}"]
-        final_sentence = [f"{a.capitalize()}s ({' and '.join([', '.join(v[:-1]),v[-1]] if len(v) > 2 else v)})" for a in arboretum.rivers for k, v in rivers_dict.items() if k == a]
 
-        animals_plants_str = ' and '.join([', '.join(final_sentence[:-1]), final_sentence[-1]] if len(final_sentence) > 2 else final_sentence)
-        print(f"\n 1. River ..{animals_plants_str}... TEST\n")
+    def countX(list, x):
+        count = 0
+        for ele in list:
+            if (ele == x):
+                count = count + 1
+        return count
+
+    def animal_list_func():
+        new_animal_list = list()
+        new_plant_list = list()
+
+        for river in arboretum.rivers:
+            for animal in river.animals:
+                animal_species = animal.species
+                new_animal_list.append(str(animal_species))
+                # number_of_animal = countX(new_animal_list, animal)
+
+
+            for plant in river.plants:
+                plant_species = plant.species
+                new_plant_list.append(str(plant_species))
+                # number_of_plant = countX(new_plant_list, plant)
+
+
+        print(new_animal_list)
+        print(new_plant_list)
+        # print(number_of_animal)
+        # print(number_of_plant)
+
+
+
+    print(animal_list_func())
+    # animal_list()
+
+    # def animal_species_func():
+    #     for river in arboretum.rivers:
+    #         for animal in river.animals:
+
+
+    animals_dict = dict()
+    for river in arboretum.rivers:
+        for animal in river.animals:
+            # number_of_animal = len(river.animals)
+            # print(number_of_animal)
+            # animal_species = animal.species
+            # number_of_animal = countX(animal_list, animal)
+            # print(number_of_animal)
+            # animals_dict[animal_species] = number_of_animal
+            # animals_dict["number of animal"] = number_of_animal
+            # print(animals_dict)
+
+            animals_values = animals_dict.values()
+            animals_values_list = list(animals_values)
+            # print(animals_values_list)
+
+            # print(number_of_animal, animal_species)
+            # animals_plants_str = ', ' .join(number_of_animal), animal_species if len(number_of_animal) > 1 else animal
+
+            # print(f"1. River   {animals_plants_str} ")
+
+
+# print("1. River (1 animal, 1 plant. etc...."))
+# have empty list
+# itereate over river then animals and plants in the biome
+# put the pairs in thier own tuple
+# put the tuples back into the list
+# loop and count number of occurances and have that be the number(value)
 
     print("1. River")
     print("2. Swamp")

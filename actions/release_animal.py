@@ -24,10 +24,10 @@ def release_animal(arboretum):
 
 
     if choice == "1":
-        animal = RiverDolphin()
+        animal = RiverDolphin(5, "looser")
 
     if choice == "2":
-        animal = GoldDustDayGecko(5, "Looser")
+        animal = GoldDustDayGecko()
 
     if choice == "3":
         animal = HawaiianHappyFaceSpider()
