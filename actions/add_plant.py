@@ -46,6 +46,7 @@ def add_plant(arboretum):
         print("2. Silversword")
         print("3. Rainbow Eucalyptus Tree")
         print("4. Blue Jade Vine")
+        print("0. Return to main menu")
         
         #Present and handle choice
         choice = input("Choose plant to cultivate > ")
@@ -61,6 +62,9 @@ def add_plant(arboretum):
         
         elif choice == "4":
             plant = BlueJadeVine()
+            
+        elif choice == "0":
+            return 0
             
         else: 
             input(f"Choose a valid option. Hit ENTER to try again. >")
@@ -101,8 +105,11 @@ def add_plant(arboretum):
         
         choice = input(f"Choose environment to plant {plant_instance} > ")
         # If choice is not an integer, it will trigger the exception
+        if choice == "0":
+            return 0
         try: 
             index = int(choice) - 1
+            # If index is between 0 and 1- the list length:
             #Checking if the choice is within the correct index range:
             if index >= 0 and index < len(possible_environ_instances):
                 # Choose the matching environment index
