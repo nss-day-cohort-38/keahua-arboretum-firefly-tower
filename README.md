@@ -17,6 +17,7 @@ You have met with other foresters and land managers and have decided on the anim
 * Add habitats such as mountain, grassland, river, etc. 
 * Add plants and animals to habitats. 
 * Extensive checks performed through duck typing to assure users can only add plants and animals that meet all specific qualifications of a habitat.
+* Many ways to navigate back to the main menu if the user has not selected a habitat.
 * View report of the plants and animals within each habitat.
 * Secret Option 7 which allows users to fill the application with tester data for easier initial navigation.
 
