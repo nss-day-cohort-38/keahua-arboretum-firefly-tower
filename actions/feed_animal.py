@@ -126,7 +126,7 @@ def feed_animal(arboretum):
         try:
             if isinstance(choice, int):
                 if choice <= 0:
-                    input("\n\nIndividual animal does not exist. Please press enter to try again...")
+                    input("\n\nPrey does not exist. Please press enter to try again...")
                     step_three(animal)
                 else:
                     animal.feed(animal.prey[choice - 1])
