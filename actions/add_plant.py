@@ -102,6 +102,7 @@ def add_plant(arboretum):
                     
         build_instance_list()
         print_instance_list()
+        print("0. Return to main menu")
         
         choice = input(f"Choose environment to plant {plant_instance} > ")
         # If choice is not an integer, it will trigger the exception
