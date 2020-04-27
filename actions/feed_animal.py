@@ -58,7 +58,7 @@ def feed_animal(arboretum):
             print(f"{index}. Ulae")
 
         if len(existingAnimals) != 0:
-            print("\n\nAt any time, press 0 and then hit enter to return to the main menu\n\n")
+            print("0. Return to main menu\n\n")
 
         if len(existingAnimals) == 0:
             input("There are no animals to feed. Press enter to return to the main menu...")
@@ -97,7 +97,7 @@ def feed_animal(arboretum):
             for index, instance in enumerate(animal.instances):
                 print(f"{index + 1}. {instance.name} the {instance.species}")
 
-        print("\n\nAt any time, press 0 and then hit enter to return to the main menu\n\n")
+        print("0. Return to main menu\n\n")
     
         print("Choose which individual to feed")
         
@@ -132,7 +132,7 @@ def feed_animal(arboretum):
         for index, prey in enumerate(animal.prey):
             print(f'{index + 1}. {prey}')   
 
-        print("\n\nAt any time, press 0 and then hit enter to return to the main menu\n\n")     
+        print("0. Return to main menu\n\n")     
 
         print("Choose what to feed it")
 
