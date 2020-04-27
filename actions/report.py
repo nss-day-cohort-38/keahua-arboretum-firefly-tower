@@ -1,4 +1,11 @@
+import os
+from .header import header 
+
 def build_facility_report(arboretum):
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+    header("Facility Report")
+    
     for river in arboretum.rivers:
         key = str(river.id)
         print(f'{river}')
