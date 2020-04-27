@@ -5,6 +5,7 @@ class Swamp(Environment):
         super().__init__()
         self.animal_cap = 8
         self.plant_cap = 12
+        self.name="Swamp"
         
     def add_animal(self, animal):
         right_animal = False
@@ -12,6 +13,7 @@ class Swamp(Environment):
         try: 
             if animal.tolerate_stagnant == True:
                 right_animal = True 
+                print(f"{animal} successfully added!")
             else:
                 print(f"Cannot add {animal} that cannot live in stagnant fresh waters to a swamp.")
         except AttributeError:

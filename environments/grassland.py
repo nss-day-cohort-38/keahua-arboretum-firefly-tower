@@ -5,12 +5,14 @@ class Grassland(Environment):
         super().__init__()
         self.animal_cap = 22
         self.plant_cap = 15
+        self.name="Grassland"
         
     def add_animal(self, animal):
         right_animal = False
         try:
             if animal.high_elevation == False and animal.tolerate_sun == True:
                 right_animal = True 
+                print(f"{animal} successfully added!")
             else: 
                 print(f"Cannot add {animal} that does not tolerate sun or high elevation to a grassland.")
         except AttributeError:

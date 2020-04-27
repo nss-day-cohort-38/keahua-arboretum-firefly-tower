@@ -5,11 +5,13 @@ class River(Environment):
       self.characteristics = "Fresh Water"
       self.animal_cap = 12
       self.plant_cap = 6
+      self.name="River"
     def add_animal(self, animal):
         right_animal = False
         try:
             if animal.aquatic and animal.tolerate_current and animal.freshwater:
                 right_animal = True
+                print(f"{animal} successfully added!")
             else: 
                 print(f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
         except AttributeError:
@@ -52,14 +54,3 @@ class River(Environment):
                 print(f"Cannot add {plant} that require stagnant water to a river biome")
         except AttributeError:
             print(f"Cannot add {plant} that require stagnant water to a river biome")
-
-    def test_plant(self, plant):
-        right_plant = False
-        try:
-            if plant.freshwater and plant.tolerate_stagnant == False:
-                right_plant = True
-        except AttributeError:
-            right_plant = False
-        if self.get_plant_count() == self.plant_cap:
-            right_plant = False
-        return right_plant
