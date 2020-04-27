@@ -13,59 +13,69 @@ def feed_animal(arboretum):
 
         animal = None
 
-        print("1. Gold Dust Day Gecko")
-        print("2. Hawaiian Happy Face Spider")
-        print("3. Kikakapu")
-        print("4. Nene Goose")
-        print("5. Opeapea")
-        print("6. Pueo")
-        print("7. River Dolphin")
-        print("8. Ulae")
+        index = 0
 
-        choice = input("Choose animal to feed > ")
-
-        if choice == "1":
-            animal = GoldDustDayGecko
-            step_two(animal)
+        existingAnimals = []
         
-
-        elif choice == "2":
-            animal = HawaiianHappyFaceSpider
-            step_two(animal)
+        if len(GoldDustDayGecko.instances) != 0:
+            index = index + 1
+            existingAnimals.append(GoldDustDayGecko)
+            print(f"{index}. Gold Dust Day Gecko")
         
+        if len(HawaiianHappyFaceSpider.instances) != 0:
+            index = index + 1
+            existingAnimals.append(HawaiianHappyFaceSpider)
+            print(f"{index}. Hawaiian Happy Face Spider")
 
-        elif choice == "3":
-            animal = Kikakapu
-            step_two(animal)
+        if len(Kikakapu.instances) != 0:
+            index = index + 1
+            existingAnimals.append(Kikakapu)
+            print(f"{index}. Kikakapu")
+
+        if len(NeneGoose.instances) != 0:
+            index = index + 1
+            existingAnimals.append(NeneGoose)
+            print(f"{index}. Nene Goose")
+
+        if len(Opeapea.instances) != 0:
+            index = index + 1
+            existingAnimals.append(Opeapea)
+            print(f"{index}. Opeapea")
+
+        if len(Pueo.instances) != 0:
+            index = index + 1
+            existingAnimals.append(Pueo)
+            print(f"{index}. Pueo")
         
+        if len(RiverDolphin.instances) != 0:
+            index = index + 1
+            existingAnimals.append(RiverDolphin)
+            print(f"{index}. River Dolphin")
 
-        elif choice == "4":
-            animal = NeneGoose
-            step_two(animal)
-        
+        if len(Ulae.instances) != 0:
+            index = index + 1
+            existingAnimals.append(Ulae)
+            print(f"{index}. Ulae")
 
-        elif choice == "5":
-            animal = Opeapea
-            step_two(animal)
-        
-
-        elif choice == "6":
-            animal = Pueo
-            step_two(animal)
-        
-
-        elif choice == "7":
-            animal = RiverDolphin
-            step_two(animal)
-        
-
-        elif choice == "8":
-            animal = Ulae
-            step_two(animal)
-
+        if len(existingAnimals) == 0:
+            input("There are no animals to feed. Press enter to return to the main menu...")
+            # returning 0 to stop the rest of the code from running
+            return 0
         else:
-            input("\n\nAnimal species does not exist. Please press enter to try again...")
-            step_one()
+            choice = input("Choose animal to feed > ")
+
+        index = 0
+        for choices in existingAnimals:
+            if choice == str(index + 1):
+                animal = existingAnimals[index]
+                step_two(animal)
+            index += 1
+
+        try:
+            if int(choice) < 1 or int(choice) > len(existingAnimals):
+                input("\n\n Animal species does not exist. Please press enter to try again. ")
+        except ValueError:
+            input("\n\n Animal species does not exist. Please press enter to try again. ")
 
     def step_two(animal):
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -123,7 +133,7 @@ def feed_animal(arboretum):
         try:
             if isinstance(choice, int):
                 if choice <= 0:
-                    input("\n\nIndividual animal does not exist. Please press enter to try again...")
+                    input("\n\nPrey does not exist. Please press enter to try again...")
                     step_three(animal)
                 else:
                     animal.feed(animal.prey[choice - 1])
@@ -134,7 +144,7 @@ def feed_animal(arboretum):
         except IndexError:
             input("\n\nPrey does not exist. Please press enter to try again...")
             step_three(animal)
-
+    
     step_one()
 
 
