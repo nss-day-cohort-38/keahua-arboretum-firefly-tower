@@ -63,6 +63,7 @@ def add_plant(arboretum):
             plant = BlueJadeVine()
             
         else: 
+            input(f"Choose a valid option. Hit ENTER to try again. >")
             step_one()
         
         #build a list of environment appropriate environ instances    
@@ -81,6 +82,7 @@ def add_plant(arboretum):
     def step_two(list_of_instance_lists, plant_instance): 
         os.system('cls' if os.name == 'nt' else 'clear')
         header(title)
+        # Start an empty list to put the environments in
         possible_environ_instances = []      
             
         def build_instance_list():
@@ -98,11 +100,17 @@ def add_plant(arboretum):
         print_instance_list()
         
         choice = input(f"Choose environment to plant {plant_instance} > ")
+        #TODO: add check to see if its an integer
         index = int(choice) - 1 
-        environment = possible_environ_instances[index]
-        confirm = input(f"Add {plant_instance} to {environment}: y/n? > ")
-        if confirm == "y":
-            environment.add_plant(plant_instance)
-            print(f"{plant_instance} added to {environment}")
+        #Checking if the choice is within the correct index range:
+        if index > 0 and index < len(possible_environ_instances):
+            environment = possible_environ_instances[index]
+            confirm = input(f"Add {plant_instance} to {environment}: y/n? > ")
+            if confirm == "y":
+                environment.add_plant(plant_instance)
+                print(f"{plant_instance} added to {environment}")
+        else:
+            input(f"Choose a valid option. Hit ENTER to try again. >")
+            step_two(list_of_instance_lists, plant_instance)
         
     step_one()
