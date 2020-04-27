@@ -10,45 +10,47 @@ from environments import Forest
 def annex_habitat(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-    def countX(list, x):
-        count = 0
-        for ele in list:
-            if (ele == x):
-                count = count + 1
-        return count
+    # def countX(list, x):
+    #     count = 0
+    #     for ele in list:
+    #         if (ele == x):
+    #             count = count + 1
+    #     return count
 
     def animal_list_func():
         new_animal_list = list()
-        new_plant_list = list()
+        # new_plant_list = list()
+        rivers_instances_list = arboretum.rivers
 
-        for river in arboretum.rivers:
-            for animal in river.animals:
-                animal_species = animal.species
-                new_animal_list.append(str(animal_species))
-                # number_of_animal = countX(new_animal_list, animal)
+        def print_animal_count():
+            for river in rivers_instances_list:
+                animal_count = river.get_animal_count()
+                print(animal_count)
+
+            def animal_names():
+                for animal in river.animals:
+                    animal_species = animal.species
+                    new_animal_list.append((animal_species))
+                    print(animal_species)
+
+            animal_names()
+        print_animal_count()
+
+        def count_animals():
+            for animal in new_animal_list:
+                count_number = new_animal_list.count(animal)
+                print(count_number)
 
 
-            for plant in river.plants:
-                plant_species = plant.species
-                new_plant_list.append(str(plant_species))
-                # number_of_plant = countX(new_plant_list, plant)
 
-
-        print(new_animal_list)
-        print(new_plant_list)
+        count_animals()
+        # print(new_animal_list)
+        # print(new_plant_list)
         # print(number_of_animal)
         # print(number_of_plant)
 
 
-
-    print(animal_list_func())
-    # animal_list()
-
-    # def animal_species_func():
-    #     for river in arboretum.rivers:
-    #         for animal in river.animals:
-
+    animal_list_func()
 
     animals_dict = dict()
     for river in arboretum.rivers:
@@ -72,12 +74,7 @@ def annex_habitat(arboretum):
             # print(f"1. River   {animals_plants_str} ")
 
 
-# print("1. River (1 animal, 1 plant. etc...."))
-# have empty list
-# itereate over river then animals and plants in the biome
-# put the pairs in thier own tuple
-# put the tuples back into the list
-# loop and count number of occurances and have that be the number(value)
+
 
     print("1. River")
     print("2. Swamp")
