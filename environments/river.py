@@ -3,7 +3,7 @@ class River(Environment):
     def __init__(self):
       super().__init__()
       self.characteristics = "Fresh Water"
-      self.animal_cap = 1
+      self.animal_cap = 12
       self.plant_cap = 6
       self.name="River"
     def add_animal(self, animal):

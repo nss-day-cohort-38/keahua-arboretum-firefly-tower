@@ -6,6 +6,13 @@ You and your friends have decided to connect with the earth again and abandon yo
 
 You have met with other foresters and land managers and have decided on the animals and plants below to focus on growing and maintaining for the arboretum.
 
+A group project by:
+
+- [Sofia Candiani](https://github.com/sncandiani)
+- [Matthew Kroeger](https://github.com/mKroogz)
+- [Matt Crook](https://github.com/MattCrook)
+- [Keith Potempa](https://github.com/keithrpotempa)
+
 ## 
 1. Clone the repository
 1. `cd` to the project directory
@@ -92,7 +99,7 @@ Choose environment to release *specified animal name* the *general animal type*
 
 ### Animal Feeding Menu
 
-If the user chooses 3 from the main menu, then they should see the following menu, with the plants listed.
+If the user chooses 3 from the main menu, then they should see the following menu, with the animals listed.
 
 ```html
 1. Gold Dust Day Gecko
