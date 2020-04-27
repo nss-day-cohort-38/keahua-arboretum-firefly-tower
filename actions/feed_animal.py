@@ -57,12 +57,16 @@ def feed_animal(arboretum):
             existingAnimals.append(Ulae)
             print(f"{index}. Ulae")
 
+        if len(existingAnimals) != 0:
+            print("0. Return to main menu\n\n")
+
         if len(existingAnimals) == 0:
             input("There are no animals to feed. Press enter to return to the main menu...")
             # returning 0 to stop the rest of the code from running
             return 0
         else:
-            choice = input("Choose animal to feed > ")
+            print("Choose animal species to feed")
+            choice = input("> ")
 
         index = 0
         for choices in existingAnimals:
@@ -72,10 +76,14 @@ def feed_animal(arboretum):
             index += 1
 
         try:
-            if int(choice) < 1 or int(choice) > len(existingAnimals):
+            if int(choice) < 0 or int(choice) > len(existingAnimals):
                 input("\n\n Animal species does not exist. Please press enter to try again. ")
+                step_one()
+            elif int(choice) == 0:
+                return 0
         except ValueError:
             input("\n\n Animal species does not exist. Please press enter to try again. ")
+            step_one()
 
     def step_two(animal):
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -88,6 +96,8 @@ def feed_animal(arboretum):
         else:
             for index, instance in enumerate(animal.instances):
                 print(f"{index + 1}. {instance.name} the {instance.species}")
+
+        print("0. Return to main menu\n\n")
     
         print("Choose which individual to feed")
         
@@ -99,9 +109,11 @@ def feed_animal(arboretum):
 
         try:
             if isinstance(choice, int):
-                if choice <= 0:
+                if choice < 0:
                     input("\n\nIndividual animal does not exist. Please press enter to try again...")
                     step_two(animal)
+                elif choice == 0:
+                    return 0
                 else:
                     animal = animal.instances[choice -1]
                     step_three(animal)
@@ -118,7 +130,9 @@ def feed_animal(arboretum):
         header(title)
 
         for index, prey in enumerate(animal.prey):
-            print(f'{index + 1}. {prey}')        
+            print(f'{index + 1}. {prey}')   
+
+        print("0. Return to main menu\n\n")     
 
         print("Choose what to feed it")
 
@@ -132,9 +146,11 @@ def feed_animal(arboretum):
 
         try:
             if isinstance(choice, int):
-                if choice <= 0:
+                if choice < 0:
                     input("\n\nPrey does not exist. Please press enter to try again...")
                     step_three(animal)
+                elif choice == 0:
+                    return 0
                 else:
                     animal.feed(animal.prey[choice - 1])
                     input("\n\nPress enter key to continue...")
