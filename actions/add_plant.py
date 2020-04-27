@@ -51,36 +51,50 @@ def add_plant(arboretum):
         #Present and handle choice
         choice = input("Choose plant to cultivate > ")
         plant = ""
-        if choice == "1":
-            plant = MountainAppleTree()
-        
-        elif choice == "2":
-            plant = Silversword()
-        
-        elif choice == "3":
-            plant = RainbowEucalyptusTree()    
-        
-        elif choice == "4":
-            plant = BlueJadeVine()
-            
-        elif choice == "0":
-            return 0
-            
-        else: 
+        # If choice is not an integer, it will be handled by the except:
+        try:
+            choice = int(choice)
+            # This should not really be a hard-coded range,
+            # but for the purposes of this exercise, it won't change
+            if choice >= 0 and choice <= 4:
+                if choice == 1:
+                    plant = MountainAppleTree()
+                
+                elif choice == 2:
+                    plant = Silversword()
+                
+                elif choice == 3:
+                    plant = RainbowEucalyptusTree()    
+                
+                elif choice == 4:
+                    plant = BlueJadeVine()
+                    
+                elif choice == 0:
+                    return 0
+                
+                else:
+                    input("There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
+                    step_one()
+                
+                #build a list of environment appropriate environ instances    
+                environs = determine_environs(plant)
+                
+                # move on to step two, with 
+                # the appropriate environ instances 
+                # and selected plant instance 
+                if len(environs) > 0:       
+                    step_two(environs, plant) 
+                else:
+                    input("There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
+                    step_one()
+            else:
+                input(f"Choose a valid option. Hit ENTER to try again. >") 
+                step_one()
+                
+        except ValueError: 
             input(f"Choose a valid option. Hit ENTER to try again. >")
             step_one()
         
-        #build a list of environment appropriate environ instances    
-        environs = determine_environs(plant)
-        
-        # move on to step two, with 
-        # the appropriate environ instances 
-        # and selected plant instance 
-        if len(environs) > 0:       
-            step_two(environs, plant) 
-        else:
-            input("There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
-            step_one()
                 
     # Choosing an environment for the plant        
     def step_two(list_of_instance_lists, plant_instance): 
