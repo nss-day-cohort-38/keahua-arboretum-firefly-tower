@@ -106,7 +106,8 @@ def release_animal(arboretum):
     environments = environment_loop()
     applicable_index = 0 
     if len(environments) == 0: 
-        print("No applicable biomes, try again")
+        input("No applicable biomes, try again")
+        release_animal(arboretum)
     else: 
         choice = input(f"Choose environment to release {animal} > ")
         try:
