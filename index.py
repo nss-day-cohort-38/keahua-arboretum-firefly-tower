@@ -5,6 +5,7 @@ from actions.release_animal import release_animal
 from actions.add_plant import add_plant
 from actions.report import build_facility_report
 from actions.feed_animal import feed_animal
+from actions.save_state import read_text, write_text, clear_text
 from tester import mass_add_to_environs
 from actions.header import header
 
@@ -26,6 +27,9 @@ def build_menu():
     print("4. Add Plant to Habitat")
     print("5. Display Facility Report")
     print("6. Exit")
+    # "Secret Seven": Seed Data with Tester Script
+    print("6. Save and Exit")
+    print("0. Clear Data and Exit")
     # "Secret Seven": Seed Data with Tester Script
 
 
@@ -51,7 +55,9 @@ def main_menu():
 
     if choice == "5":
         build_facility_report(keahua)
-        pass
+
+    if choice == "6":
+        write_text(keahua)
 
     # "Secret Seven": seed data with tester script
     if choice == "7":
@@ -59,6 +65,12 @@ def main_menu():
 
     if choice != "6":
         main_menu()
+    if choice == "0":
+        clear_text()
+
+    if choice != "6" and choice != "0":
+        main_menu()
 
 
+read_text(keahua)
 main_menu()

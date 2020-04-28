@@ -20,6 +20,6 @@ def header(text):
         return spaced_str
     
     print(center("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+"))
-    print(space_out(text))
+    print(center(space_out(text)))
     print(center("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+"))
     print()

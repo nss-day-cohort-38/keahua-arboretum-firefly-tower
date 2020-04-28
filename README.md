@@ -6,14 +6,14 @@ You and your friends have decided to connect with the earth again and abandon yo
 
 You have met with other foresters and land managers and have decided on the animals and plants below to focus on growing and maintaining for the arboretum.
 
-A group project by:
+## A group project by:
 
 - [Sofia Candiani](https://github.com/sncandiani)
 - [Matthew Kroeger](https://github.com/mKroogz)
 - [Matt Crook](https://github.com/MattCrook)
 - [Keith Potempa](https://github.com/keithrpotempa)
 
-## 
+## Installation Instructions
 1. Clone the repository
 1. `cd` to the project directory
 1. Run the command `pip install -r requirements.txt`
@@ -27,6 +27,7 @@ A group project by:
 * Many ways to navigate back to the main menu if the user has not selected a habitat.
 * View report of the plants and animals within each habitat.
 * Secret Option 7 which allows users to fill the application with tester data for easier initial navigation.
+* Users can choose when exiting the app to either save or erase their data for future runs of the application.
 
 
 ## Keahua Inventory and Land Lifeline Electronic Repository (KILLER)
@@ -47,7 +48,8 @@ When the user first executes KILLER, they should be welcomed to the system and b
 3. Feed Animal
 4. Cultivate New Plant
 5. Show Arboretum Report
-6. Exit
+6. Save and Exit
+0. Clear Data and Exit
 > _
 ```
 
@@ -189,5 +191,11 @@ Mountain [bdf33960]
 
 Press any key to continue...
 ```
+
+### Saveable Data Between Runs
+
+Users can choose when exiting the app to either save or erase their data for future runs of the application.
+
+
 ### Planning Process
 [Sketchboard](https://sketchboard.me/rB63PJFAWKFL#/)
