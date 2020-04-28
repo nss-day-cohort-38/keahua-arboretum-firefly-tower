@@ -8,7 +8,6 @@ def release_animal(arboretum):
         os.system('cls' if os.name == 'nt' else 'clear')
         header("Release Animal")
 
-<<<<<<< HEAD
     print('1. Gold Dust Day Gecko')
     print('2. River Dolphin')
     print('3. Nene Goose')
@@ -19,28 +18,26 @@ def release_animal(arboretum):
     print("8. Happy-Face Spider")
 
     animal = None
-=======
         arboretum_biome_selection = []
-    
+
         arboretum_biome_selection.append(arboretum.rivers)
         arboretum_biome_selection.append(arboretum.swamps)
         arboretum_biome_selection.append(arboretum.coastlines)
         arboretum_biome_selection.append(arboretum.forests)
         arboretum_biome_selection.append(arboretum.mountains)
         arboretum_biome_selection.append(arboretum.grasslands)
->>>>>>> master
 
         def all(arboretum_biome_selection):
             for biome in arboretum_biome_selection:
-                if len(biome) == 0: 
+                if len(biome) == 0:
                     return False
                 else:
                     return True
         all(arboretum_biome_selection)
-        if all(arboretum_biome_selection) == False: 
+        if all(arboretum_biome_selection) == False:
             input("No habitats annexed. Press enter to return to the main menu...")
-            return 0 
-        else: 
+            return 0
+        else:
             print('1. Gold Dust Day Gecko')
             print('2. River Dolphin')
             print('3. Nene Goose')
@@ -50,10 +47,9 @@ def release_animal(arboretum):
             print("7. Ope'ape'a")
             print("8. Happy-Face Spider")
             print("0. Return to main menu")
-            
+
             animal = None
 
-<<<<<<< HEAD
     if choice == "1":
         print("Enter age for Gold Dust Day Gecko : ")
         answer1 = int(input())
@@ -161,7 +157,6 @@ def release_animal(arboretum):
             pass
 
     input("\n\nPress enter key to continue...")
-=======
             choice = input("Choose animal to release > ")
 
         if choice == "0": 
@@ -295,4 +290,3 @@ def release_animal(arboretum):
 
     # input("\n\nPress enter key to continue...")
     step_1()
->>>>>>> master
