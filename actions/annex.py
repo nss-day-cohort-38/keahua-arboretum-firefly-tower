@@ -24,46 +24,45 @@ def annex_habitat(arboretum):
         new_plant_list = list()
         sentence = list()
         choices = dict()
+        if biome_instance_list:
+            for biome in biome_instance_list:
 
-        for biome in biome_instance_list:
-
-            animal_count = biome.get_animal_count()
-            plant_count = biome.get_plant_count()
+                animal_count = biome.get_animal_count()
+                plant_count = biome.get_plant_count()
             # sentence.append(biome.name)
 
-            for animal in biome.animals:
-                animal_species = animal.species
-                new_animal_list.append((animal_species))
+                for animal in biome.animals:
+                    animal_species = animal.species
+                    new_animal_list.append((animal_species))
                 # sentence.append(animal_species)
 
-            for plant in biome.plants:
-                plant_species = plant.species
-                new_plant_list.append((plant_species))
+                for plant in biome.plants:
+                    plant_species = plant.species
+                    new_plant_list.append((plant_species))
                 # sentence.append(plant_species)
 
-        for animal in new_animal_list:
-            count_number_animal = new_animal_list.count(animal)
+            for animal in new_animal_list:
+                count_number_animal = new_animal_list.count(animal)
             # print(count_number_animal, animal)
-            animal_tuple = (count_number_animal, animal)
-            sentence.append(animal_tuple)
+                animal_tuple = (count_number_animal, animal)
+                sentence.append(animal_tuple)
 
-        for plant in new_plant_list:
-            count_number_plant = new_plant_list.count(plant)
-            plant_tuple = (count_number_plant, plant)
-            sentence.append(plant_tuple)
+            for plant in new_plant_list:
+                count_number_plant = new_plant_list.count(plant)
+                plant_tuple = (count_number_plant, plant)
+                sentence.append(plant_tuple)
 
-        choices[biome.name] = sentence
+            choices[biome.name] = sentence
         # pprint.pprint(choices)
 
-        for (key, value) in choices.items():
-            print(f'{key}: {tuple(v for v in value)}')
+            for (key, value) in choices.items():
+                print(f'{key}: {tuple(v for v in value)}')
 
     print('\n')
     print("+-++-++-++-++-++-++-++-++-++-++-++-+")
     print(r"  Currently in your Biomes ")
     print("+-++-++-++-++-++-++-++-++-++-++-++-+")
     print('\n')
-
 
     build_list_func(rivers_instances_list)
     build_list_func(grasslands_instances_list)
