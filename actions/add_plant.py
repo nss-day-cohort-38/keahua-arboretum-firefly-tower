@@ -2,11 +2,10 @@ import os
 from plants import RainbowEucalyptusTree, Silversword, MountainAppleTree, BlueJadeVine
 from .header import header
 
-
 def add_plant(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
     title = "Cultivate Plant"
-
+        
     # Choosing a plant to cultivate
     def step_one():
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -39,55 +38,17 @@ def add_plant(arboretum):
                 if arboretum.swamps[0].test_plant(plant_instance):
                     appropriate_environs.append(arboretum.swamps)
             return appropriate_environs
-
-        # Present menu options
+        
+        #Present menu options
         header(title)
-
+        
         print("1. Mountain Apple Tree")
         print("2. Silversword")
         print("3. Rainbow Eucalyptus Tree")
         print("4. Blue Jade Vine")
-
-        # Present and handle choice
-        choice = input("Choose plant to cultivate > ")
-        plant = ""
-        if choice == "1":
-            plant = MountainAppleTree()
-
-        elif choice == "2":
-            plant = Silversword()
-
-        elif choice == "3":
-            plant = RainbowEucalyptusTree()
-
-        elif choice == "4":
-            plant = BlueJadeVine()
-
-        else:
-            step_one()
-
-        # build a list of environment appropriate environ instances
-        environs = determine_environs(plant)
-
-        # move on to step two, with
-        # the appropriate environ instances
-        # and selected plant instance
-        if len(environs) > 0:
-            step_two(environs, plant)
-        else:
-            input(
-                "There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
-            step_one()
-
-    # Choosing an environment for the plant
-    def step_two(list_of_instance_lists, plant_instance):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        header(title)
-        possible_environ_instances = []
-
         print("0. Return to main menu")
-
-        # Present and handle choice
+        
+        #Present and handle choice
         choice = input("Choose plant to cultivate > ")
         plant = ""
         # If choice is not an integer, it will be handled by the except:
@@ -98,79 +59,63 @@ def add_plant(arboretum):
             if choice >= 0 and choice <= 4:
                 if choice == 1:
                     plant = MountainAppleTree()
-
+                
                 elif choice == 2:
                     plant = Silversword()
-
+                
                 elif choice == 3:
-                    plant = RainbowEucalyptusTree()
-
+                    plant = RainbowEucalyptusTree()    
+                
                 elif choice == 4:
                     plant = BlueJadeVine()
-
+                    
                 elif choice == 0:
                     return 0
-
+                
                 else:
-                    input(
-                        "There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
+                    input("There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
                     step_one()
-
-                # build a list of environment appropriate environ instances
+                
+                #build a list of environment appropriate environ instances    
                 environs = determine_environs(plant)
-
-                # move on to step two, with
-                # the appropriate environ instances
-                # and selected plant instance
-                if len(environs) > 0:
-                    step_two(environs, plant)
+                
+                # move on to step two, with 
+                # the appropriate environ instances 
+                # and selected plant instance 
+                if len(environs) > 0:       
+                    step_two(environs, plant) 
                 else:
-                    input(
-                        "There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
+                    input("There are no appropriate environments for that plant. Press ENTER to choose a new plant. > ")
                     step_one()
             else:
-                input(f"Choose a valid option. Hit ENTER to try again. >")
+                input(f"Choose a valid option. Hit ENTER to try again. >") 
                 step_one()
-
-        except ValueError:
+                
+        except ValueError: 
             input(f"Choose a valid option. Hit ENTER to try again. >")
             step_one()
-
-    # Choosing an environment for the plant
-
-    def step_two(list_of_instance_lists, plant_instance):
+        
+                
+    # Choosing an environment for the plant        
+    def step_two(list_of_instance_lists, plant_instance): 
         os.system('cls' if os.name == 'nt' else 'clear')
         header(title)
         # Start an empty list to put the environments in
-        possible_environ_instances = []
-
+        possible_environ_instances = []      
+            
         def build_instance_list():
             for instance_list in list_of_instance_lists:
                 for instance in instance_list:
                     possible_environ_instances.append(instance)
-
+        
         def print_instance_list():
             for instance in possible_environ_instances:
                 index = possible_environ_instances.index(instance)
                 plant_count = instance.get_plant_count()
                 print(f"{index + 1}. {instance} ({plant_count} plants)")
-
+                    
         build_instance_list()
         print_instance_list()
-
-
-<< << << < HEAD
-
-        choice = input(f"Choose environment to plant {plant_instance} > ")
-        index = int(choice) - 1
-        environment = possible_environ_instances[index]
-        confirm = input(f"Add {plant_instance} to {environment}: y/n? > ")
-        if confirm == "y":
-            environment.add_plant(plant_instance)
-            print(f"{plant_instance} added to {environment}")
-
-    step_one()
-=======
         print("0. Return to main menu")
         
         choice = input(f"Choose environment to plant {plant_instance} > ")
@@ -180,7 +125,7 @@ def add_plant(arboretum):
         try: 
             index = int(choice) - 1
             # If index is between 0 and 1- the list length:
-            # Checking if the choice is within the correct index range:
+            #Checking if the choice is within the correct index range:
             if index >= 0 and index < len(possible_environ_instances):
                 # Choose the matching environment index
                 environment = possible_environ_instances[index]
@@ -199,4 +144,3 @@ def add_plant(arboretum):
 
         
     step_one()
->>>>>>> master
