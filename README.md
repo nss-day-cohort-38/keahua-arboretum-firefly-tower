@@ -8,6 +8,7 @@ You have met with other foresters and land managers and have decided on the anim
 
 ## A group project by:
 
+- [Alyssa Nycum](https://github.com/alyssanycum)
 - [Sofia Candiani](https://github.com/sncandiani)
 - [Matthew Kroeger](https://github.com/mKroogz)
 - [Matt Crook](https://github.com/MattCrook)
