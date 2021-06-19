@@ -28,7 +28,6 @@ def build_menu():
 
 def main_menu():
     """Show Keahua Action Options
-
     Arguments: None
     """
     build_menu()

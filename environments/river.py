@@ -1,4 +1,6 @@
 from environments import Environment
+
+
 class River(Environment):
     def __init__(self):
       super().__init__()
@@ -15,7 +17,8 @@ class River(Environment):
             else: 
                 print(f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
         except AttributeError:
-            print(f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
+            print(
+                f"Cannot add {animal}: non-aquatic, or saltwater, or stagnant water animals to a river")
         if right_animal:
             if animal.min_release_age <= animal.age:
                 right_animal = True
@@ -27,7 +30,7 @@ class River(Environment):
                 self.animals.append(animal)
             else:
                 print("There are too many animals to add another one")
-                
+
     def test_animal(self, animal):
         right_animal = False
         try:
